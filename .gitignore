@@ -1,1 +1,5 @@
 .vs
+
+# Environment
+.env
+.env.*
