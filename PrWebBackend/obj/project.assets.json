@@ -214,11 +214,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ogi\\source\\repos\\PrWebBackend\\PrWebBackend.csproj",
+      "projectUniqueName": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\PrWebBackend.csproj",
       "projectName": "PrWebBackend",
-      "projectPath": "C:\\Users\\Ogi\\source\\repos\\PrWebBackend\\PrWebBackend.csproj",
+      "projectPath": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\PrWebBackend.csproj",
       "packagesPath": "C:\\Users\\Ogi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ogi\\source\\repos\\PrWebBackend\\obj\\",
+      "outputPath": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ogi\\AppData\\Roaming\\NuGet\\NuGet.Config",

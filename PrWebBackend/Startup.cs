@@ -28,6 +28,15 @@ namespace PrWebBackend
         {
 
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowViteReactApp", builder =>
+                {
+                    builder.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PrWebBackend", Version = "v1" });
@@ -47,6 +56,8 @@ namespace PrWebBackend
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("AllowViteReactApp");
 
             app.UseAuthorization();
 
