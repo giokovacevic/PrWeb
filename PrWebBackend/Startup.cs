@@ -37,18 +37,13 @@ namespace PrWebBackend
             services.AddScoped<IPersonRepository>(serviceProvider => new PersonRepository(connectionString));
             services.AddScoped<IPersonService, PersonService>();
 
-            /*services.AddDbContext<AppDbContext>(options => // TODO: appsettings.json
-                options.UseMySql(
-                    "server=localhost;database=webprtestdb;user=root;password=1234",
-                    new MySqlServerVersion(new Version(8, 0, 29))
-                )
-            );*/
+            string allowedOrigins = Configuration.GetSection("Cors:AllowedOrigins").Get<string>();
 
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowViteReactApp", builder => // TODO: appsettings.json
+                options.AddPolicy("AllowViteReactApp", builder => 
                 {
-                    builder.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+                    builder.WithOrigins(allowedOrigins).AllowAnyHeader().AllowAnyMethod();
                 });
             });
 
