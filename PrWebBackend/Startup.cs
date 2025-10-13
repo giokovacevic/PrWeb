@@ -7,6 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PrWebBackend.Repositories.Implementations;
+using PrWebBackend.Repositories.Interfaces;
+using PrWebBackend.Services.Implementations;
+using PrWebBackend.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,15 +27,26 @@ namespace PrWebBackend
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
             services.AddControllers();
 
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
+
+            services.AddScoped<IPersonRepository>(serviceProvider => new PersonRepository(connectionString));
+            services.AddScoped<IPersonService, PersonService>();
+
+            /*services.AddDbContext<AppDbContext>(options => // TODO: appsettings.json
+                options.UseMySql(
+                    "server=localhost;database=webprtestdb;user=root;password=1234",
+                    new MySqlServerVersion(new Version(8, 0, 29))
+                )
+            );*/
+
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowViteReactApp", builder =>
+                options.AddPolicy("AllowViteReactApp", builder => // TODO: appsettings.json
                 {
                     builder.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
                 });
@@ -43,7 +58,6 @@ namespace PrWebBackend
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

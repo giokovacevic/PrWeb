@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\repositories\\implementations\\personrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:repositories\\implementations\\personrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\services\\interfaces\\personservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:services\\interfaces\\personservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\dtos\\persondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:dtos\\persondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,28 +58,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Startup.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Startup.cs",
-              "RelativeDocumentMoniker": "Startup.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Startup.cs",
-              "RelativeToolTip": "Startup.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAA1wDUAAAANAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "PersonDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\PersonDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\PersonDTO.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\PersonDTO.cs",
+              "RelativeToolTip": "DTOs\\PersonDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T20:45:04.776Z",
+              "WhenOpened": "2025-10-13T18:14:32.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PersonController.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\PersonController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PersonController.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\PersonController.cs",
+              "RelativeToolTip": "Controllers\\PersonController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T17:44:21.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PersonService.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Interfaces\\PersonService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\PersonService.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Interfaces\\PersonService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\PersonService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvw8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T15:19:15.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PersonRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Repositories\\Implementations\\PersonRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\PersonRepository.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Repositories\\Implementations\\PersonRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\PersonRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T18:16:35.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Person.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Person.cs",
+              "RelativeDocumentMoniker": "Models\\Person.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Person.cs",
+              "RelativeToolTip": "Models\\Person.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T18:15:31.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T14:47:27.328Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Startup.cs",
+              "RelativeDocumentMoniker": "Startup.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Startup.cs",
+              "RelativeToolTip": "Startup.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T20:45:00.584Z",
+              "WhenOpened": "2025-10-07T20:45:04.776Z",
               "EditorCaption": ""
             }
           ]
