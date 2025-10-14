@@ -2,13 +2,20 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { API_URL } from './utils/Config';
 
-interface Person{
+interface Role{
   id: number;
   name: string;
 }
+interface User{
+  id: number;
+  username: string;
+  email: string;
+  password: string;
+  role: Role;
+}
 
 function App() {
-  const [data, setData] = useState<Person[]>([]);
+  const [data, setData] = useState<User[]>([]);
 
   useEffect(() => {
     loadData();
@@ -16,7 +23,7 @@ function App() {
 
   const loadData = async () => {
     try{
-      const response = await fetch(`${API_URL}/Person/all`);
+      const response = await fetch(`${API_URL}/users/all`);
       const data = await response.json();
       console.log(data);
       setData(data);
@@ -29,8 +36,7 @@ function App() {
     <>
       <div>
         {data.map((value) => <div key={value.id}>
-          <div>{value.id}</div>
-          <div>{value.name}</div>
+          <div>{value.id}&nbsp;{value.username}&nbsp;{value.email}&nbsp;{value.password}&nbsp;{value.role.id}&nbsp;{value.role.name}</div>
         </div>)}
       </div>
     </>

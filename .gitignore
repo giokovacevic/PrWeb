@@ -3,3 +3,6 @@
 # Environment
 .env
 .env.*
+
+# delete later
+IgnoredByGit.mysql

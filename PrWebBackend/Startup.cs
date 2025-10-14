@@ -34,8 +34,8 @@ namespace PrWebBackend
 
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddScoped<IPersonRepository>(serviceProvider => new PersonRepository(connectionString));
-            services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IUserRepository>(serviceProvider => new UserRepository(connectionString));
+            services.AddScoped<IUserService, UserService>();
 
             string allowedOrigins = Configuration.GetSection("Cors:AllowedOrigins").Get<string>();
 
