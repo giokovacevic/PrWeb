@@ -34,6 +34,9 @@ namespace PrWebBackend
 
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
 
+            services.AddScoped<IRoleRepository>(serviceProvider => new RoleRepository(connectionString));
+            services.AddScoped<IRoleService, RoleService>();
+
             services.AddScoped<IUserRepository>(serviceProvider => new UserRepository(connectionString));
             services.AddScoped<IUserService, UserService>();
 

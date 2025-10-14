@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\services\\implementations\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:services\\implementations\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\repositories\\implementations\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:repositories\\implementations\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,14 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,7 +90,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RoleService.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Implementations\\RoleService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\RoleService.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Implementations\\RoleService.cs",
+              "RelativeToolTip": "Services\\Implementations\\RoleService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T14:29:05.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Repositories\\Implementations\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\RoleRepository.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Repositories\\Implementations\\RoleRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\RoleRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwAcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T14:22:05.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoleController.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "Controllers\\RoleController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvw4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T14:18:09.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -91,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Implementations\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\UserService.cs",
@@ -104,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Repositories\\Implementations\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\UserRepository.cs",
@@ -130,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\UserDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\UserDTO.cs",
@@ -143,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "RoleDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\RoleDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\RoleDTO.cs",
@@ -156,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "PlayerDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\PlayerDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\PlayerDTO.cs",
@@ -169,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AdminDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\AdminDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\AdminDTO.cs",
@@ -182,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -195,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Role.cs",
               "RelativeDocumentMoniker": "Models\\Role.cs",
@@ -208,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "IgnoredByGit.mysql",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Migrations\\IgnoredByGit.mysql",
               "RelativeDocumentMoniker": "Migrations\\IgnoredByGit.mysql",
@@ -221,13 +272,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Startup.cs",
               "RelativeDocumentMoniker": "Startup.cs",
               "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Startup.cs",
               "RelativeToolTip": "Startup.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAmwCAAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAA2wCAAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-07T20:45:04.776Z",
               "EditorCaption": ""
