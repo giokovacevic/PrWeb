@@ -35,8 +35,8 @@ namespace PrWebBackend.Repositories.Implementations
                     {
                         while(reader.Read())
                         {
-                            int id = reader.GetInt32(Columns[nameof(Role.Id)]);
-                            string name = reader.GetString(Columns[nameof(Role.Name)]);
+                            int id = reader.GetInt32(reader.GetOrdinal(Columns[nameof(Role.Id)]));
+                            string name = reader.GetString(reader.GetOrdinal(Columns[nameof(Role.Name)]));
 
                             roles.Add(new Role(id, name));
                         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PrWebBackend.DTOs;
+using PrWebBackend.DTOs.Auth;
 using PrWebBackend.Services.Interfaces;
 using System.Collections.Generic;
 

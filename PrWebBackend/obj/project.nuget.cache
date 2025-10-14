@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "t/dEOWOwPRo=",
+  "dgSpecHash": "buaXxp1wj0k=",
   "success": true,
   "projectFilePath": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\PrWebBackend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Ogi\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Ogi\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Ogi\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\Ogi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
