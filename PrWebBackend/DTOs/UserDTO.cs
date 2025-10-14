@@ -8,6 +8,7 @@ namespace PrWebBackend.DTOs
         private readonly int _id;
         private readonly string _username;
         private readonly string _email;
+        private readonly string _imageUrl;
         private readonly RoleDTO _role;
 
         public UserDTO() { }
@@ -20,6 +21,7 @@ namespace PrWebBackend.DTOs
             _id = user.Id;
             _username = user.Username;
             _email = user.Email;
+            _imageUrl = user.ImageUrl;
             _role = new RoleDTO(user.Role);
         }
 
@@ -30,5 +32,7 @@ namespace PrWebBackend.DTOs
         public string Email => _email;
 
         public RoleDTO Role => _role;
+
+        public string ImageUrl => _imageUrl;
     }
 }

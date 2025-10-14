@@ -10,6 +10,15 @@ namespace PrWebBackend.Repositories.Implementations
     {
         private readonly string _connectionString;
 
+        public static readonly Dictionary<string, string> Columns = new Dictionary<string, string>()
+        {
+            {nameof(User.Id), "user_id" },
+            {nameof(User.Username), "user_username" },
+            {nameof(User.Email), "user_email" },
+            {nameof(User.Password), "user_password" },
+            {nameof(User.ImageUrl), "user_imageurl" }
+        };
+
         public UserRepository(string connectionString)
         {
             _connectionString = connectionString;
@@ -24,7 +33,10 @@ namespace PrWebBackend.Repositories.Implementations
         {
             List<User> users = new List<User>();
 
-            string query = "SELECT user_id, user_username, user_email, user_password, role_id, role_name FROM user u INNER JOIN Role r on u.user_role_id = r.role_id;";
+            string userAlias = "u";
+            string roleAlias = "r";
+
+            string query = $"SELECT {Columns[nameof(User.Id)]}, {Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}, {roleAlias}.{RoleRepository.Columns[nameof(Role.Id)]} AS {RoleRepository.Columns[nameof(Role.Id)]} , {roleAlias}.{RoleRepository.Columns[nameof(Role.Name)]} AS {RoleRepository.Columns[nameof(Role.Name)]} FROM User {userAlias} INNER JOIN Role {roleAlias} on {userAlias}.{RoleRepository.Columns[nameof(Role.Id)]} = {roleAlias}.{RoleRepository.Columns[nameof(Role.Id)]};";
 
             using(MySqlConnection connection = new MySqlConnection(_connectionString))
             {
@@ -36,14 +48,15 @@ namespace PrWebBackend.Repositories.Implementations
                     {
                         while (reader.Read())
                         {
-                            int id = reader.GetInt32("user_id");
-                            string username = reader.GetString("user_username");
-                            string email = reader.GetString("user_email");
-                            string password = reader.GetString("user_password");
-                            int roleId = reader.GetInt32("role_id");
-                            string roleName = reader.GetString("role_name");
+                            int id = reader.GetInt32(Columns[nameof(User.Id)]);
+                            string username = reader.GetString(Columns[nameof(User.Username)]);
+                            string email = reader.GetString(Columns[nameof(User.Email)]);
+                            string password = reader.GetString(Columns[nameof(User.Password)]);
+                            string imageUrl = reader.IsDBNull(reader.GetOrdinal(Columns[nameof(User.ImageUrl)])) ? null : reader.GetString(Columns[nameof(User.ImageUrl)]);
+                            int roleId = reader.GetInt32(RoleRepository.Columns[nameof(Role.Id)]);
+                            string roleName = reader.GetString(RoleRepository.Columns[nameof(Role.Name)]);
                             
-                            User user = new User(id, username, email, password, new Role(roleId, roleName));
+                            User user = new User(id, username, email, password, imageUrl, new Role(roleId, roleName));
 
                             users.Add(user);
                         }

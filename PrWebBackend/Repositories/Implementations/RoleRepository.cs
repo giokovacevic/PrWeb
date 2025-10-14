@@ -9,6 +9,12 @@ namespace PrWebBackend.Repositories.Implementations
     {
         private readonly string _connectionString;
 
+        public static readonly Dictionary<string, string> Columns = new Dictionary<string, string>()
+        {
+            {nameof(Role.Id), "role_id" },
+            {nameof(Role.Name), "role_name" },
+        };
+
         public RoleRepository(string connectionString)
         {
             _connectionString = connectionString;
@@ -17,7 +23,7 @@ namespace PrWebBackend.Repositories.Implementations
         {
             List<Role> roles = new List<Role>();
 
-            string query = "SELECT role_id, role_name FROM Role;";
+            string query = $"SELECT {Columns[nameof(Role.Id)]},{Columns[nameof(Role.Name)]} FROM Role;";
 
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
@@ -29,8 +35,8 @@ namespace PrWebBackend.Repositories.Implementations
                     {
                         while(reader.Read())
                         {
-                            int id = reader.GetInt32("role_id");
-                            string name = reader.GetString("role_name");
+                            int id = reader.GetInt32(Columns[nameof(Role.Id)]);
+                            string name = reader.GetString(Columns[nameof(Role.Name)]);
 
                             roles.Add(new Role(id, name));
                         }

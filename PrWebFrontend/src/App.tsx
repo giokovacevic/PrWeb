@@ -11,6 +11,7 @@ interface User{
   username: string;
   email: string;
   password: string;
+  imageUrl: string;
   role: Role;
 }
 
@@ -36,7 +37,7 @@ function App() {
     <>
       <div>
         {data.map((value) => <div key={value.id}>
-          <div>{value.id}&nbsp;{value.username}&nbsp;{value.email}&nbsp;{value.password}&nbsp;{value.role.id}&nbsp;{value.role.name}</div>
+          <div>{value.id}&nbsp;{value.username}&nbsp;{value.email}&nbsp;{value.password}&nbsp;{value.imageUrl}&nbsp;{value.role.id}&nbsp;{value.role.name}</div>
         </div>)}
       </div>
     </>
