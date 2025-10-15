@@ -8,6 +8,6 @@ namespace PrWebBackend.Services.Interfaces
     {
         public List<UserDTO> GetAll();
         public LoginResponseDTO Login(LoginDTO loginDTO);
-        public void Register();
+        public RegisterResponseDTO Register(RegisterDTO registerDTO);
     }
 }

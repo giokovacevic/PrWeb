@@ -19,7 +19,6 @@ namespace PrWebBackend.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginDTO loginDTO)
         {
-            Console.WriteLine(loginDTO.UsernameOrEmail + " " + loginDTO.Password);
             LoginResponseDTO response = _userService.Login(loginDTO);
             if(response == null)
             {
@@ -29,9 +28,11 @@ namespace PrWebBackend.Controllers
         }
 
         [HttpPost("register")]
-        public int Register() // TODO: [FromBody] RegisterDTO. ...
+        public IActionResult Register([FromBody] RegisterDTO registerDTO)
         {
-            return -1;
+            RegisterResponseDTO response = _userService.Register(registerDTO);
+            if (!response.Successful) return BadRequest(response);
+            return StatusCode(201, response);
         }
     }
 }

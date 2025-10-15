@@ -18,7 +18,9 @@ namespace PrWebBackend.Repositories.Implementations
             {nameof(User.Username), "user_username" },
             {nameof(User.Email), "user_email" },
             {nameof(User.Password), "user_password" },
-            {nameof(User.ImageUrl), "user_imageurl" }
+            {nameof(User.ImageUrl), "user_imageurl" },
+            {"RoleId", "role_id" },
+            {"RoleName", "role_name" }
         };
 
         public UserRepository(string connectionString)
@@ -26,9 +28,29 @@ namespace PrWebBackend.Repositories.Implementations
             _connectionString = connectionString;
         }
 
-        public bool CreateUser(User user)
+        public void CreateUser(User user)
         {
-            throw new System.NotImplementedException();
+            string query = $"INSERT INTO User({Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}" +(user.Role != null ? $",{Columns["RoleId"]}" : "" )+ ") VALUES (@username, @email, @password, @imageUrl" + (user.Role != null ? $",@roleId" : "") + ")";
+
+            /*string query = (user.Role == null) 
+                ? $"INSERT INTO User({Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}) VALUES (@username, @email, @password, @imageUrl)"
+                : $"INSERT INTO User({Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}, {Columns["RoleId"]}) VALUES (@username, @email, @password, @imageUrl, @roleId)";*/
+
+            using (MySqlConnection connection = new MySqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", user.Username);
+                    command.Parameters.AddWithValue("@email", user.Email);
+                    command.Parameters.AddWithValue("@password", user.Password);
+                    command.Parameters.AddWithValue("@imageUrl", ((user.ImageUrl == null) ? DBNull.Value : user.ImageUrl));
+                    if (user.Role != null) command.Parameters.AddWithValue("@roleId", user.Role.Id);
+
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         public List<User> ReadAll()
@@ -38,7 +60,7 @@ namespace PrWebBackend.Repositories.Implementations
             string userAlias = "u";
             string roleAlias = "r";
 
-            string query = $"SELECT {Columns[nameof(User.Id)]}, {Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}, {roleAlias}.{RoleRepository.Columns[nameof(Role.Id)]} AS {RoleRepository.Columns[nameof(Role.Id)]} , {roleAlias}.{RoleRepository.Columns[nameof(Role.Name)]} AS {RoleRepository.Columns[nameof(Role.Name)]} FROM User {userAlias} INNER JOIN Role {roleAlias} on {userAlias}.{RoleRepository.Columns[nameof(Role.Id)]} = {roleAlias}.{RoleRepository.Columns[nameof(Role.Id)]};";
+            string query = $"SELECT {Columns[nameof(User.Id)]}, {Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}, {roleAlias}.{Columns["RoleId"]} AS {Columns["RoleId"]} , {roleAlias}.{Columns["RoleName"]} AS {Columns["RoleName"]} FROM User {userAlias} INNER JOIN Role {roleAlias} on {userAlias}.{Columns["RoleId"]} = {roleAlias}.{Columns["RoleId"]};";
 
             using(MySqlConnection connection = new MySqlConnection(_connectionString))
             {
@@ -66,7 +88,7 @@ namespace PrWebBackend.Repositories.Implementations
             string userAlias = "u";
             string roleAlias = "r";
 
-            string query = $"SELECT {Columns[nameof(User.Id)]}, {Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}, {roleAlias}.{RoleRepository.Columns[nameof(Role.Id)]} AS {RoleRepository.Columns[nameof(Role.Id)]} , {roleAlias}.{RoleRepository.Columns[nameof(Role.Name)]} AS {RoleRepository.Columns[nameof(Role.Name)]} FROM User {userAlias} INNER JOIN Role {roleAlias} on {userAlias}.{RoleRepository.Columns[nameof(Role.Id)]} = {roleAlias}.{RoleRepository.Columns[nameof(Role.Id)]} WHERE {Columns[nameof(User.Username)]} = @value OR {Columns[nameof(User.Email)]} = @value;";
+            string query = $"SELECT {Columns[nameof(User.Id)]}, {Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}, {roleAlias}.{Columns["RoleId"]} AS {Columns["RoleId"]} , {roleAlias}.{Columns["RoleName"]} AS {Columns["RoleName"]} FROM User {userAlias} INNER JOIN Role {roleAlias} on {userAlias}.{Columns["RoleId"]} = {roleAlias}.{Columns["RoleId"]} WHERE {Columns[nameof(User.Username)]} = @value OR {Columns[nameof(User.Email)]} = @value;";
 
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
@@ -126,7 +148,7 @@ namespace PrWebBackend.Repositories.Implementations
             string userAlias = "u";
             string roleAlias = "r";
 
-            string query = $"SELECT {Columns[nameof(User.Id)]}, {Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}, {roleAlias}.{RoleRepository.Columns[nameof(Role.Id)]} AS {RoleRepository.Columns[nameof(Role.Id)]} , {roleAlias}.{RoleRepository.Columns[nameof(Role.Name)]} AS {RoleRepository.Columns[nameof(Role.Name)]} FROM User {userAlias} INNER JOIN Role {roleAlias} on {userAlias}.{RoleRepository.Columns[nameof(Role.Id)]} = {roleAlias}.{RoleRepository.Columns[nameof(Role.Id)]} WHERE {Columns[fieldName]} = @value;";
+            string query = $"SELECT {Columns[nameof(User.Id)]}, {Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}, {roleAlias}.{Columns["RoleId"]} AS {Columns["RoleId"]} , {roleAlias}.{Columns["RoleName"]} AS {Columns["RoleName"]} FROM User {userAlias} INNER JOIN Role {roleAlias} on {userAlias}.{Columns["RoleId"]} = {roleAlias}.{Columns["RoleId"]} WHERE {Columns[fieldName]} = @value;";
 
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
@@ -156,8 +178,8 @@ namespace PrWebBackend.Repositories.Implementations
             string email = reader.GetString(reader.GetOrdinal(Columns[nameof(User.Email)]));
             string password = reader.GetString(reader.GetOrdinal(Columns[nameof(User.Password)]));
             string imageUrl = reader.IsDBNull(reader.GetOrdinal(Columns[nameof(User.ImageUrl)])) ? null : reader.GetString(reader.GetOrdinal(Columns[nameof(User.ImageUrl)]));
-            int roleId = reader.GetInt32(reader.GetOrdinal(RoleRepository.Columns[nameof(Role.Id)]));
-            string roleName = reader.GetString(reader.GetOrdinal(RoleRepository.Columns[nameof(Role.Name)]));
+            int roleId = reader.GetInt32(reader.GetOrdinal(Columns["RoleId"]));
+            string roleName = reader.GetString(reader.GetOrdinal(Columns["RoleName"]));
 
             return new User(id, username, email, password, imageUrl, new Role(roleId, roleName));
         }

@@ -1,46 +1,22 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { API_URL } from './utils/Config';
+import { Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import LoginLayout from './pages/auth/LoginLayout';
+import RegisterLayout from './pages/auth/RegisterLayout';
 
-interface Role{
-  id: number;
-  name: string;
-}
-interface User{
-  id: number;
-  username: string;
-  email: string;
-  password: string;
-  imageUrl: string;
-  role: Role;
-}
+
 
 function App() {
-  const [data, setData] = useState<User[]>([]);
-
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  const loadData = async () => {
-    try{
-      const response = await fetch(`${API_URL}/users/all`);
-      const data = await response.json();
-      console.log(data);
-      setData(data);
-    }catch(error) {
-      console.log(error);
-    }
-  } 
 
   return (
-    <>
-      <div>
-        {data.map((value) => <div key={value.id}>
-          <div>{value.id}&nbsp;{value.username}&nbsp;{value.email}&nbsp;{value.password}&nbsp;{value.imageUrl}&nbsp;{value.role.id}&nbsp;{value.role.name}</div>
-        </div>)}
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<LoginLayout/>}></Route>
+        <Route path='/auth/login' element={<LoginLayout/>}></Route>
+        <Route path='/auth/register' element={<RegisterLayout/>}></Route>
+      </Routes>
+    </Router>
   )
 }
 

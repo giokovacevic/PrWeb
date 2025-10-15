@@ -20,6 +20,7 @@ namespace PrWebBackend
 {
     public class Startup
     {
+        private readonly string _cors = "AllowViteReactApp";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -44,9 +45,9 @@ namespace PrWebBackend
 
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowViteReactApp", builder => 
+                options.AddPolicy(name: _cors, builder => 
                 {
-                    builder.WithOrigins(allowedOrigins).AllowAnyHeader().AllowAnyMethod();
+                    builder.WithOrigins(allowedOrigins).AllowAnyHeader().AllowAnyMethod().AllowCredentials();
                 });
             });
 
@@ -69,7 +70,7 @@ namespace PrWebBackend
 
             app.UseRouting();
 
-            app.UseCors("AllowViteReactApp");
+            app.UseCors(_cors);
 
             app.UseAuthorization();
 
