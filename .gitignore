@@ -6,6 +6,4 @@
 
 # delete later
 IgnoredByGit.mysql
-
-#webroot
-/wwwroot/uploads/
+PrWebBackend/wwwroot/uploads/*
