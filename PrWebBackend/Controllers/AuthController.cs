@@ -28,7 +28,7 @@ namespace PrWebBackend.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] RegisterDTO registerDTO)
+        public IActionResult Register([FromForm] RegisterDTO registerDTO)
         {
             RegisterResponseDTO response = _userService.Register(registerDTO);
             if (!response.Successful) return BadRequest(response);

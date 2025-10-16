@@ -72,6 +72,8 @@ namespace PrWebBackend
 
             app.UseCors(_cors);
 
+            app.UseStaticFiles();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
