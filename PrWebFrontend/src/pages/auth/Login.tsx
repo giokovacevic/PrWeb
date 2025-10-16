@@ -44,21 +44,24 @@ const Login = () => {
 
     return (
         <div className={styles.root}>
-            <div className='login-form-wrapper'>
-                <form className='login-form' onSubmit={handleSubmitClicked}>
-                    <div className='title'>Login</div>
-                    <div>
+            <div className={styles.login_form_wrapper}>
+                <form className={styles.login_form} onSubmit={handleSubmitClicked}>
+                    <div className={styles.title}>Login</div>
+                    <div className={styles.field}>
                         <input type='text' placeholder='Username or Email' required ref={usernameOrEmailRef}></input>
                     </div>
-                    <div>
+                    <div className={styles.field}>
                         <input type='password' placeholder='Password' required ref={passwordRef}></input>
                     </div>
-                    <div>
-                        <a href='/auth/register'>Register as player</a>
+                    <div className={styles.button}>
                         <input type='submit' value="Sign in" ></input>
                     </div>
-                    <div className='feedback'>{feedback}</div>
+                    <div className={styles.feedback}><span>{feedback}</span></div>
+                    <div className={styles.link}>
+                        <a href='/auth/register'>&gt;&nbsp;Register new Player here</a>
+                    </div>
                 </form>
+                
             </div>
         </div>
     );

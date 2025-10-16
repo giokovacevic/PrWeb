@@ -28,11 +28,13 @@ const Register = () => {
 
         const username = usernameRef.current?.value || "";
         const password = passwordRef.current?.value || "";
+        const email = emailRef.current?.value || "";
         const image = imageRef.current?.files?.[0] || null;
 
         let formData:FormData = new FormData();
         formData.append("username", username);
         formData.append("password", password);
+        formData.append("email", email);
         if(image) formData.append("image", image);
   
 
@@ -45,27 +47,29 @@ const Register = () => {
      }
     
     return (
-        <div className='root'>
-            <div className='register-form-wrapper'>
-                <form className='login-form' onSubmit={handleSubmitClicked}>
-                    <div className='title'>Player Registration</div>
-                    <div>
+        <div className={styles.root}>
+            <div className={styles.register_form_wrapper}>
+                <form className={styles.register_form} onSubmit={handleSubmitClicked}>
+                    <div className={styles.title}>Player Registration</div>
+                    <div className={styles.field}>
                         <input type='text' placeholder='Username' required ref={usernameRef}></input>
                     </div>
-                    <div>
+                    <div className={styles.field}>
                         <input type='password' placeholder='Password' required ref={passwordRef}></input>
                     </div>
-                    <div>
+                    <div className={styles.field}>
                         <input type='text' placeholder='Email' required ref={emailRef}></input>
                     </div>
-                    <div>
+                    <div className={styles.file}>
                         <input type='file' accept="image/*" required ref={imageRef}></input>
                     </div>
-                    <div>
-                        <a href='/auth/login'>Back to login</a>
+                    <div className={styles.button}>
                         <input type='submit' value="Confirm" ></input>
                     </div>
-                    <div className='feedback'>{feedback}</div>
+                    <div className={styles.feedback}>{feedback.map((value, index) => <span key={index}>{value}</span>)}</div>
+                    <div className={styles.link}>
+                        <a href='/auth/login'>&lt;&nbsp;Back to login</a>
+                    </div>
                 </form>
             </div>
         </div>
