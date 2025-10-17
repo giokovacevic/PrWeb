@@ -1,6 +1,11 @@
+import { sidebarItems } from "../../../constants/SidebarItems";
+import UserLayout from "../UserLayout";
+
 const AdminEdit = () => {
     return (
-        <div>Admin Edit</div>
+        <UserLayout sidebarItems={sidebarItems["admin"]}>
+            <div>Admin edit!</div>
+        </UserLayout>
     );
 }
 export default AdminEdit;

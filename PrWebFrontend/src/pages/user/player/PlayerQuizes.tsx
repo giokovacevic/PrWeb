@@ -1,6 +1,11 @@
+import { sidebarItems } from "../../../constants/SidebarItems";
+import UserLayout from "../UserLayout";
+
 const PlayerQuizes = () => {
     return (
-        <div>Player Quizes</div>
+        <UserLayout sidebarItems={sidebarItems["player"]}>
+            <div>Player Quizes!</div>
+        </UserLayout>
     );
 }
 export default PlayerQuizes;
