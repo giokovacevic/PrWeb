@@ -1,8 +1,77 @@
 .root{
     width: 100%;
     height: fit-content;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .header{
-    background-color: blue;
+    background: linear-gradient(white, rgb(218, 218, 218));
+}
+.header > div{
+    color: rgb(0, 0, 0);
+}
+.item{
+    background-color: white;
+}
+.header, .item{
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.header > div, .item > div{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.name{
+    flex: 3;
+}
+.difficulty{
+    flex: 2;
+}
+.count{
+    flex: 1;
+}
+.time{
+    flex: 2;
+}
+.description{
+    flex: 7;
+}
+.play_button{
+    display: flex;
+    justify-content: center;
+    width: 180px;
+}
+
+.item > .name{
+
+}
+.item > .difficulty{
+
+}
+.item > .time{
+    color: rgb(0, 66, 209);
+}
+.item > .description{
+    color: rgb(80, 80, 80);
+}
+.item > .play_button{
+
+}
+.item > .play_button a{
+    border-radius: none;
+    border: none;
+    height: 80%;
+    color: white;
+    background: linear-gradient(rgb(6, 221, 167), rgb(2, 173, 39));
+    width: 100px;
+    text-decoration: none;
+}
+.item > .play_button a:hover{
+    background: linear-gradient(rgb(17, 240, 184), rgb(5, 211, 50));
 }
