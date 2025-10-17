@@ -12,6 +12,8 @@ import PlayerRankings from './pages/user/player/PlayerRankings';
 import PlayerQuiz from './pages/user/player/PlayerQuiz';
 import PlayerResults from './pages/user/player/PlayerResults';
 import PlayerQuizWrapper from './pages/user/player/PlayerQuizWrapper';
+import AdminResults from './pages/user/admin/AdminResults';
+import AdminCreate from './pages/user/admin/AdminCreate';
 
 
 
@@ -34,8 +36,8 @@ function App() {
           <Route path="/player/rankings" element={<ProtectedRoute requiredRole='player'><PlayerRankings /></ProtectedRoute>}></Route>
 
           <Route path="/admin/edit" element={<ProtectedRoute requiredRole='admin'><AdminEdit /></ProtectedRoute>}></Route>
-          <Route path="/admin/results" element={<ProtectedRoute requiredRole='admin'><AdminEdit /></ProtectedRoute>}></Route>
-          <Route path="/admin/create" element={<ProtectedRoute requiredRole='admin'><AdminEdit /></ProtectedRoute>}></Route>
+          <Route path="/admin/results" element={<ProtectedRoute requiredRole='admin'><AdminResults /></ProtectedRoute>}></Route>
+          <Route path="/admin/create" element={<ProtectedRoute requiredRole='admin'><AdminCreate /></ProtectedRoute>}></Route>
         </Routes>
       </Router>
     </AuthProvider>

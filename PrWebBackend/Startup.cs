@@ -41,6 +41,9 @@ namespace PrWebBackend
             services.AddScoped<IUserRepository>(serviceProvider => new UserRepository(connectionString));
             services.AddScoped<IUserService, UserService>();
 
+            services.AddScoped<IQuizRepository>(serviceProvider => new QuizRepository(connectionString));
+            services.AddScoped<IQuizService, QuizService>();
+
             string allowedOrigins = Configuration.GetSection("Cors:AllowedOrigins").Get<string>();
 
             services.AddCors(options =>
