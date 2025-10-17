@@ -47,7 +47,7 @@
     transition: 0.3s;
 }
 .item_active{
-    background: linear-gradient(#3ba7ff, #0067bb);
+    background: linear-gradient(#2885ff, #0263e2);
     color: white;
     cursor: default;
 }

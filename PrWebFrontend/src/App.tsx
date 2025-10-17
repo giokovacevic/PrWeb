@@ -8,6 +8,10 @@ import { AuthProvider } from './contexts/AuthContext';
 import PlayerQuizes from './pages/user/player/PlayerQuizes';
 import AdminEdit from './pages/user/admin/AdminEdit';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import PlayerRankings from './pages/user/player/PlayerRankings';
+import PlayerQuiz from './pages/user/player/PlayerQuiz';
+import PlayerResults from './pages/user/player/PlayerResults';
+import PlayerQuizWrapper from './pages/user/player/PlayerQuizWrapper';
 
 
 
@@ -25,8 +29,13 @@ function App() {
           <Route path="/admin" element={<Navigate to="/admin/edit"/>}></Route>
 
           <Route path="/player/quizes" element={<ProtectedRoute requiredRole='player'><PlayerQuizes /></ProtectedRoute>}></Route>
+          <Route path="/player/quizes/:quizId" element={<ProtectedRoute requiredRole='player'><PlayerQuizWrapper /></ProtectedRoute>}></Route>
+          <Route path="/player/results" element={<ProtectedRoute requiredRole='player'><PlayerResults /></ProtectedRoute>}></Route>
+          <Route path="/player/rankings" element={<ProtectedRoute requiredRole='player'><PlayerRankings /></ProtectedRoute>}></Route>
 
           <Route path="/admin/edit" element={<ProtectedRoute requiredRole='admin'><AdminEdit /></ProtectedRoute>}></Route>
+          <Route path="/admin/results" element={<ProtectedRoute requiredRole='admin'><AdminEdit /></ProtectedRoute>}></Route>
+          <Route path="/admin/create" element={<ProtectedRoute requiredRole='admin'><AdminEdit /></ProtectedRoute>}></Route>
         </Routes>
       </Router>
     </AuthProvider>
