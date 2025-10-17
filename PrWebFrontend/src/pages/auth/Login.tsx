@@ -58,7 +58,7 @@ const Login = () => {
                     </div>
                     <div className={styles.feedback}><span>{feedback}</span></div>
                     <div className={styles.link}>
-                        <a href='/auth/register'>&gt;&nbsp;Register new Player here</a>
+                        <a href='/auth/register'>&gt;&nbsp;Register as a new Player here</a>
                     </div>
                 </form>
                 

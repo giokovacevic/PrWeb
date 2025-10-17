@@ -32,8 +32,8 @@ const Sidebar = ({items}:SidebarProps) => {
                 {items.map((value) => (
                     <Link key={value.name} to={value.path} className={(currentPath === value.path) ? styles.item_active : styles.item}>{value.name}</Link>
                 ))}
-                <button className={styles.logout_button} onClick={handleLogoutButtonClicked}>Logout</button>
             </div>
+            <button className={styles.logout_button} onClick={handleLogoutButtonClicked}>&lt;&nbsp;Logout</button>
         </div>
     );
 }
