@@ -18,21 +18,21 @@ namespace PrWebBackend.Controllers
         }
 
         [HttpGet("all")]
-        public List<QuizDTO> GetAll() // TODO:
+        public List<QuizDTO> GetAllQuizzes() // TODO:
         {
-            return _quizService.GetAll();
+            return _quizService.GetAllQuizzes();
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public IActionResult GetQuizById(int id)
         {
-            QuizDTO response = _quizService.GetById(id);
+            QuizDTO response = _quizService.GetQuizById(id);
             if (response == null) return NotFound();
             return Ok(response);
         }
 
-        [HttpPost("new-result")]
-        public IActionResult PostQuizResults([FromBody] int a) // TODO:
+        [HttpPost("quiz-result")]
+        public IActionResult PostQuizResults([FromBody] QuizResultRequestDTO quizResultRequestDTO) // TODO:
         {
             return Ok();
         }

@@ -7,29 +7,19 @@ import FillQuestion from '../question/FillQuestion';
 import TrueFalseQuestion from '../question/TrueFalseQuestion';
 import SingleChoiceQuestion from '../question/SingleChoiceQuestion';
 import MultiChoiceQuestion from '../question/MultiChoiceQuestion';
-import { useAuth } from '../../contexts/AuthContext';
 import type IQuizResult from '../../types/models/quiz/IQuizResult';
 
 type QuizProps = {
     quiz: IQuiz;
     onSubmit?: () => void;
+    quizResult: IQuizResult | undefined;
+    setQuizResult: React.Dispatch<React.SetStateAction<IQuizResult | undefined>>;
 }
-const Quiz = ({quiz, onSubmit}:QuizProps) => {
-    const {user} = useAuth();
+const Quiz = ({quiz, quizResult, setQuizResult, onSubmit}:QuizProps) => {
+  
     const [quizTimer, setQuizTimer] = useState<number>(quiz.timeSeconds);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
-    const [quizResult, setQuizResult] = useState<IQuizResult>({
-        userId: user?.id,
-        quizId: quiz.id,
-        timeNeededSeconds: 0,
-        answers: quiz.questions.map(question => ({
-                questionId: question.id,
-                answer: '',
-                correct: null,
-                selectionId: null,
-                optionIds: []
-            }))
-    });
+    
 
     useEffect(() => {
 
@@ -48,7 +38,7 @@ const Quiz = ({quiz, onSubmit}:QuizProps) => {
     }, []);
 
     const handleFinishedButtonClicked = () => {
-
+        onSubmit ? onSubmit() : null;
     }
 
     const handlePrevButtonClicked = () => {
@@ -67,16 +57,16 @@ const Quiz = ({quiz, onSubmit}:QuizProps) => {
         
         switch(question.type) {
         case "FILL_IN":
-            const currentAnswer = quizResult.answers.find(a => a.questionId === question.id)?.answer;
+            const currentAnswer = quizResult?.answers.find(a => a.questionId === question.id)?.answer;
             return <FillQuestion text={question.text} answer={currentAnswer} onChange={newAnswer => handleAnswerChange(question.id, newAnswer)}/>
         case "TRUE_FALSE":
-            const currentStatement = quizResult.answers.find(a => a.questionId === question.id)?.correct;
+            const currentStatement = quizResult?.answers.find(a => a.questionId === question.id)?.correct;
             return <TrueFalseQuestion text={question.text} statement={currentStatement} onChange={newStatement => handleStatementChange(question.id, newStatement)}/>
         case "SINGLE_CHOICE":
-            const currentSelection = quizResult.answers.find(a => a.questionId === question.id)?.selectionId;
+            const currentSelection = quizResult?.answers.find(a => a.questionId === question.id)?.selectionId;
             return <SingleChoiceQuestion text={question.text} options={question.options} selectedOptionId={currentSelection} onChange={(newSelection) => handleSelectionChange(question.id, newSelection)}/>
         case "MULTI_CHOICE":
-             const currentSelections = quizResult.answers.find(a => a.questionId === question.id)?.optionIds;   
+             const currentSelections = quizResult?.answers.find(a => a.questionId === question.id)?.optionIds;   
             return <MultiChoiceQuestion text={question.text} options={question.options} selectedOptionIds={currentSelections} onChange={(newSelections => handleSelectionsChange(question.id, newSelections))}/>
          default:
             return null;   
@@ -84,33 +74,48 @@ const Quiz = ({quiz, onSubmit}:QuizProps) => {
     }
 
     const handleAnswerChange = (questionId: number, newAnswer?: string) => {
-        setQuizResult(prev => ({
-            ...prev, 
-            answers: prev.answers.map(a => a.questionId === questionId ? {...a, answer: newAnswer} : a)
-        }));
+        setQuizResult(prev => {
+            if (!prev) return prev;
+            return {
+                ...prev,
+                answers: prev.answers.map(a =>
+                a.questionId === questionId ? { ...a, answer: newAnswer } : a
+                ),
+            };
+        });
     }
 
     const handleStatementChange = (questionId: number, newStatement?: boolean | null) => {
-        setQuizResult(prev => ({
-            ...prev, 
-            answers: prev.answers.map(a => a.questionId === questionId ? {...a, correct: newStatement} : a)
-        }));
+        setQuizResult(prev => {
+            if(!prev) return prev;
+            return {
+                ...prev,
+                answers: prev.answers.map(a => a.questionId === questionId ? {...a, correct: newStatement} : a)
+            };
+        });
     }
 
     const handleSelectionChange = (questionId: number, newSelection?: number | null) => {
         
-        setQuizResult(prev => ({
-            ...prev, 
+        setQuizResult(prev => {
+            if(!prev) return prev;
+            return {
+                ...prev, 
             answers: prev.answers.map(a => a.questionId === questionId ? {...a, selectionId: newSelection} : a)
-        }));
+            }
+        });
+
     }
 
     const handleSelectionsChange = (questionId: number, newSelections: number[] | null) => {
         
-        setQuizResult(prev => ({
-            ...prev, 
+        setQuizResult(prev => {
+            if(!prev) return prev;
+            return {
+                ...prev, 
             answers: prev.answers.map(a => a.questionId === questionId ? {...a, optionIds: newSelections} : a)
-        }));
+            }
+        });
     }
 
     return (
@@ -129,7 +134,7 @@ const Quiz = ({quiz, onSubmit}:QuizProps) => {
             </div>
             <div className={styles.buttons}>
                 <div className={styles.page_button}><button onClick={handlePrevButtonClicked} disabled={currentQuestionIndex == 0 ? true : false}>&lt;&nbsp;Previous</button></div>
-                <div className={styles.finish_button}><button>Finish</button></div>
+                <div className={styles.finish_button}><button onClick={handleFinishedButtonClicked}>Finish</button></div>
                 <div className={styles.page_button}><button onClick={handleNextButtonClicked} disabled={currentQuestionIndex == (quiz.questions.length - 1) ? true : false}>Next&nbsp;&gt;</button></div>
             </div>
         </div>

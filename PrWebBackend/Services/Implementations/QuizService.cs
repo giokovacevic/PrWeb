@@ -14,7 +14,7 @@ namespace PrWebBackend.Services.Implementations
         {
             _quizRepository = quizRepository;
         }
-        public List<QuizDTO> GetAll()
+        public List<QuizDTO> GetAllQuizzes()
         {
             List<Quiz> quizes = _quizRepository.ReadAll();
             List<QuizDTO> quizDTOs = new List<QuizDTO>();
@@ -25,12 +25,31 @@ namespace PrWebBackend.Services.Implementations
             return quizDTOs;
         }
 
-        public QuizDTO GetById(int id)
+        public QuizDTO GetQuizById(int quizId)
         {
-            Quiz quiz = _quizRepository.ReadById(id);
+            Quiz quiz = _quizRepository.ReadById(quizId);
             QuizDTO quizDTO = null;
             if (quiz != null) quizDTO = new QuizDTO(quiz);
             return quizDTO;
+        }
+
+        public QuizResultDTO AddQuizResult(QuizResultRequestDTO quizResultRequestDTO) // TODO:
+        {
+            // check right an dwrong answers
+            // create QuizResult.cs instance
+            // write it to repo
+            // return QuizResultDTO back
+            return null;
+        }
+
+        public QuizResultDTO GetAllQuizResultsByUserId(int userId) // TODO:
+        {
+            return null;
+        }
+
+        public List<QuizResultDTO> GetAllQuizResults() // TODO:
+        {
+            return null;
         }
     }
 }

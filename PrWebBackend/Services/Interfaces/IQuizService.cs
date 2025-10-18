@@ -5,7 +5,10 @@ namespace PrWebBackend.Services.Interfaces
 {
     public interface IQuizService
     {
-        public List<QuizDTO> GetAll();
-        public QuizDTO GetById(int id);
+        public List<QuizDTO> GetAllQuizzes();
+        public QuizDTO GetQuizById(int quizId);
+        public QuizResultDTO AddQuizResult(QuizResultRequestDTO quizResultRequestDTO);
+        public QuizResultDTO GetAllQuizResultsByUserId(int userId);
+        public List<QuizResultDTO> GetAllQuizResults();
     }
 }
