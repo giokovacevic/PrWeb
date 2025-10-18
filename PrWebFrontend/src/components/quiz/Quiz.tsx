@@ -1,4 +1,4 @@
-import { useEffect, useEffectEvent, useState } from 'react';
+import { useEffect, useEffectEvent, useRef, useState } from 'react';
 import type IQuiz from '../../types/models/quiz/IQuiz';
 import type { QuestionType } from '../../types/models/quiz/IQuestion';
 import styles from './Quiz.module.css';
@@ -19,25 +19,34 @@ const Quiz = ({quiz, quizResult, setQuizResult, onSubmit}:QuizProps) => {
   
     const [quizTimer, setQuizTimer] = useState<number>(quiz.timeSeconds);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+    const timerIdRef = useRef<number | undefined>(undefined);
+    const finishedButtonRef = useRef<HTMLButtonElement | null>(null);
     
 
     useEffect(() => {
 
-        const timerId = setInterval(() => {
+        timerIdRef.current = setInterval(() => {
             setQuizTimer(prev => {
                 if (prev <= 1) {
-                    clearInterval(timerId);
-                    onSubmit ? onSubmit() : null;
+                    clearInterval(timerIdRef.current);
+                    handleSubmit();
                     return 0;
                 }
                 return prev - 1;
             });
         }, 1000);
 
-        return () => clearInterval(timerId);
+        return () => clearInterval(timerIdRef.current);
     }, []);
 
     const handleFinishedButtonClicked = () => {
+        if(timerIdRef.current) clearInterval(timerIdRef.current);
+        setQuizTimer(timer => 0);
+        handleSubmit();
+    }
+
+    const handleSubmit = () => {
+        finishedButtonRef.current?.setAttribute("disabled", "true");
         onSubmit ? onSubmit() : null;
     }
 
@@ -133,9 +142,9 @@ const Quiz = ({quiz, quizResult, setQuizResult, onSubmit}:QuizProps) => {
                     ))}
             </div>
             <div className={styles.buttons}>
-                <div className={styles.page_button}><button onClick={handlePrevButtonClicked} disabled={currentQuestionIndex == 0 ? true : false}>&lt;&nbsp;Previous</button></div>
-                <div className={styles.finish_button}><button onClick={handleFinishedButtonClicked}>Finish</button></div>
-                <div className={styles.page_button}><button onClick={handleNextButtonClicked} disabled={currentQuestionIndex == (quiz.questions.length - 1) ? true : false}>Next&nbsp;&gt;</button></div>
+                <div className={styles.page_button}><button onClick={handlePrevButtonClicked} disabled={currentQuestionIndex === 0 ? true : false}>&lt;&nbsp;Previous</button></div>
+                <div className={styles.finish_button}><button ref={finishedButtonRef} onClick={handleFinishedButtonClicked}>Finish</button></div>
+                <div className={styles.page_button}><button onClick={handleNextButtonClicked} disabled={currentQuestionIndex === (quiz.questions.length - 1) ? true : false}>Next&nbsp;&gt;</button></div>
             </div>
         </div>
     );

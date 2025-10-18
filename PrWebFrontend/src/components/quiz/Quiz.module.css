@@ -107,3 +107,9 @@
 .finish_button button:hover{
     cursor: pointer;
 }
+.finish_button button[disabled]{
+    background-color: rgb(255, 204, 94);
+}
+.finish_button button[disabled]:hover{
+    cursor: default;
+}
