@@ -1,0 +1,109 @@
+.root{
+    width: 1000px;
+    background-color: white;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.title_section{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    border-bottom: solid 1px rgb(173, 173, 173);
+}
+.title{
+    font-size: 40px;
+    flex: 5;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+.timer{
+    font-size: 60px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question{
+    height: 500px;
+}
+.tracker{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px 12px 20px;
+}
+.tracker > div{
+    flex: 1;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.tracker > div:hover{
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: solid 1px rgb(173, 173, 173);
+}
+.buttons > div{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons > div > button{
+    height: 100%;
+    width: 80%;
+    border: none;
+    font-size: 20px;
+    border-radius: 0px;
+}
+.page_button{
+    flex: 3;
+}
+.finish_button{
+    flex: 5;
+}
+.page_button > button{
+    background-color: #0c59ff;
+    color: white;
+}
+.page_button > button:hover{
+    background-color:rgb(38, 107, 255);
+}
+.page_button > button[disabled] {
+    background-color: #b4ccff;
+}
+.page_button > button[disabled]:hover {
+    cursor: default;
+}
+
+.finish_button > button{
+    background-color: rgb(255, 100, 39);
+    color: white;
+}
+.finish_button > button:hover{
+    background-color: rgb(255, 123, 71);
+}
+
+.page_button button:hover, 
+.finish_button button:hover{
+    cursor: pointer;
+}

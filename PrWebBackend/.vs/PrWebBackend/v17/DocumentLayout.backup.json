@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\dtos\\quiz\\quizresultsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:dtos\\quiz\\quizresultsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\dtos\\quiz\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:dtos\\quiz\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\services\\interfaces\\iquizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:services\\interfaces\\iquizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\repositories\\implementations\\quizrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -126,7 +130,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -146,7 +150,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "QuizResultsDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Quiz\\QuizResultsDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\Quiz\\QuizResultsDTO.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Quiz\\QuizResultsDTO.cs",
+              "RelativeToolTip": "DTOs\\Quiz\\QuizResultsDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T17:36:03.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "QuizRepository.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Repositories\\Implementations\\QuizRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\QuizRepository.cs",
@@ -159,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "QuizService.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Implementations\\QuizService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\QuizService.cs",
@@ -172,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "IQuizService.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Interfaces\\IQuizService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IQuizService.cs",
@@ -185,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "QuizDifficultyDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Quiz\\QuizDifficultyDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Quiz\\QuizDifficultyDTO.cs",
@@ -198,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "QuestionOptionDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Quiz\\QuestionOptionDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Quiz\\QuestionOptionDTO.cs",
@@ -211,20 +228,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "QuestionDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Quiz\\QuestionDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Quiz\\QuestionDTO.cs",
               "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Quiz\\QuestionDTO.cs",
               "RelativeToolTip": "DTOs\\Quiz\\QuestionDTO.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAmwBEAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T15:07:21.811Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "QuizDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Quiz\\QuizDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Quiz\\QuizDTO.cs",
@@ -237,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "SingleChoiceQuestion.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\SingleChoiceQuestion.cs",
               "RelativeDocumentMoniker": "Models\\Quiz\\SingleChoiceQuestion.cs",
@@ -250,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "MultiChoiceQuestion.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\MultiChoiceQuestion.cs",
               "RelativeDocumentMoniker": "Models\\Quiz\\MultiChoiceQuestion.cs",
@@ -263,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "TrueFalseQuestion.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\TrueFalseQuestion.cs",
               "RelativeDocumentMoniker": "Models\\Quiz\\TrueFalseQuestion.cs",
@@ -276,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "FillQuestion.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\FillQuestion.cs",
               "RelativeDocumentMoniker": "Models\\Quiz\\FillQuestion.cs",
@@ -289,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "QuestionOption.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\QuestionOption.cs",
               "RelativeDocumentMoniker": "Models\\Quiz\\QuestionOption.cs",
@@ -302,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "QuizDifficulty.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\QuizDifficulty.cs",
               "RelativeDocumentMoniker": "Models\\Quiz\\QuizDifficulty.cs",
@@ -315,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Question.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\Question.cs",
               "RelativeDocumentMoniker": "Models\\Quiz\\Question.cs",
@@ -328,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Quiz.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\Quiz.cs",
               "RelativeDocumentMoniker": "Models\\Quiz\\Quiz.cs",
@@ -341,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "IQuizRepository.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Repositories\\Interfaces\\IQuizRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IQuizRepository.cs",
@@ -354,20 +371,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "QuizController.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\QuizController.cs",
               "RelativeDocumentMoniker": "Controllers\\QuizController.cs",
               "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\QuizController.cs",
               "RelativeToolTip": "Controllers\\QuizController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAA2wBsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T14:27:34.314Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Implementations\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\UserService.cs",
@@ -380,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -393,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Auth\\LoginDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Auth\\LoginDTO.cs",
@@ -406,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "RegisterResponseDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Auth\\RegisterResponseDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Auth\\RegisterResponseDTO.cs",
@@ -419,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Repositories\\Implementations\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\UserRepository.cs",
@@ -432,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -445,7 +462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
@@ -458,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "RoleService.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Implementations\\RoleService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\RoleService.cs",
@@ -471,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "RoleController.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\RoleController.cs",
               "RelativeDocumentMoniker": "Controllers\\RoleController.cs",
@@ -484,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -497,7 +514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "IgnoredByGit.mysql",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Migrations\\IgnoredByGit.mysql",
               "RelativeDocumentMoniker": "Migrations\\IgnoredByGit.mysql",
@@ -510,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Startup.cs",
               "RelativeDocumentMoniker": "Startup.cs",

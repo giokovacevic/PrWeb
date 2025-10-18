@@ -9,7 +9,7 @@ interface SidebarItems{
 
 export const sidebarItems:SidebarItems = {
     player: [
-        {name: 'Quizes', path: '/player/quizes'},
+        {name: 'Quizzes', path: '/player/quizzes'},
         {name: 'Results', path: '/player/results'},
         {name: 'Rankings', path: '/player/rankings'}
     ],

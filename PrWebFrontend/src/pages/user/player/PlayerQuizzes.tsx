@@ -3,7 +3,7 @@ import QuizList from "../../../components/quiz_list/QuizList";
 import { sidebarItems } from "../../../constants/SidebarItems";
 import UserLayout from "../UserLayout";
 import type IQuiz from "../../../types/models/quiz/IQuiz";
-import { getAllQuizes } from "../../../services/QuizService";
+import { getAllQuizzes } from "../../../services/QuizService";
 
 const PlayerQuizes = () => {
     const [quizes, setQuizes] = useState<IQuiz[]>([]);
@@ -14,7 +14,7 @@ const PlayerQuizes = () => {
 
     const loadData = async () => {
         try {
-            const data = await getAllQuizes();
+            const data = await getAllQuizzes();
             setQuizes(data);
         } catch (error) {
             setQuizes([]);

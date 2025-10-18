@@ -5,7 +5,7 @@ import { Navigate, Route, BrowserRouter as Router, Routes} from 'react-router-do
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import { AuthProvider } from './contexts/AuthContext';
-import PlayerQuizes from './pages/user/player/PlayerQuizes';
+import PlayerQuizzes from './pages/user/player/PlayerQuizzes';
 import AdminEdit from './pages/user/admin/AdminEdit';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import PlayerRankings from './pages/user/player/PlayerRankings';
@@ -27,11 +27,11 @@ function App() {
           <Route path="/auth/login" element={<Login/>}></Route>
           <Route path="/auth/register" element={<Register/>}></Route>
           
-          <Route path="/player" element={<Navigate to="/player/quizes"/>}></Route>
+          <Route path="/player" element={<Navigate to="/player/quizzes"/>}></Route>
           <Route path="/admin" element={<Navigate to="/admin/edit"/>}></Route>
 
-          <Route path="/player/quizes" element={<ProtectedRoute requiredRole='player'><PlayerQuizes /></ProtectedRoute>}></Route>
-          <Route path="/player/quizes/:quizId" element={<ProtectedRoute requiredRole='player'><PlayerQuizWrapper /></ProtectedRoute>}></Route>
+          <Route path="/player/quizzes" element={<ProtectedRoute requiredRole='player'><PlayerQuizzes /></ProtectedRoute>}></Route>
+          <Route path="/player/quizzes/:quizId" element={<ProtectedRoute requiredRole='player'><PlayerQuizWrapper /></ProtectedRoute>}></Route>
           <Route path="/player/results" element={<ProtectedRoute requiredRole='player'><PlayerResults /></ProtectedRoute>}></Route>
           <Route path="/player/rankings" element={<ProtectedRoute requiredRole='player'><PlayerRankings /></ProtectedRoute>}></Route>
 

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace PrWebBackend.Controllers
 {
     [ApiController]
-    [Route("quizes")]
+    [Route("quizzes")]
     public class QuizController : ControllerBase
     {
         private readonly IQuizService _quizService;
@@ -29,6 +29,12 @@ namespace PrWebBackend.Controllers
             QuizDTO response = _quizService.GetById(id);
             if (response == null) return NotFound();
             return Ok(response);
+        }
+
+        [HttpPost("new-result")]
+        public IActionResult PostQuizResults([FromBody] int a) // TODO:
+        {
+            return Ok();
         }
     }
 }

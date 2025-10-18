@@ -37,7 +37,7 @@ const QuizList = ({quizes}:QuizListProps) => {
                     <div className={styles.count}>{quiz.questions.length}</div>
                     <div className={styles.time}>{quiz.timeSeconds}&nbsp;s</div>
                     <div className={styles.description}>{quiz.description}</div>
-                    <div className={styles.play_button}><a href={"/player/quizes/" + quiz.id}>Play</a></div>
+                    <div className={styles.play_button}><a href={"/player/quizzes/" + quiz.id}>Play</a></div>
                 </div>
                 ))}
         </div>

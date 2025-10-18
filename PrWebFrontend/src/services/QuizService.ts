@@ -1,9 +1,10 @@
 import type IQuiz from "../types/models/quiz/IQuiz"
+import type IQuizResult from "../types/models/quiz/IQuizResult";
 import { API_URL } from "../utils/Config";
 
-export const getAllQuizes = async ():Promise<IQuiz[]> => {
+export const getAllQuizzes = async ():Promise<IQuiz[]> => {
     try{
-        const response = await fetch(`${API_URL}/quizes/all`);
+        const response = await fetch(`${API_URL}/quizzes/all`);
         if(!response.ok) {
             throw new Error(`Error fetching in QuizService: getAllQuizes | ` + response.statusText);
         }
@@ -16,9 +17,9 @@ export const getAllQuizes = async ():Promise<IQuiz[]> => {
     }
 }
 
-export const getQuizById = async (id: number):Promise<IQuiz | null> => {
+export const getQuizById = async (id: string):Promise<IQuiz | null> => {
     try{
-        const response = await fetch(`${API_URL}/quizes/${id}`);
+        const response = await fetch(`${API_URL}/quizzes/${id}`);
         if(!response.ok) {
             throw new Error(`Error fetching in QuizService: getQuizById (${id}) | ` + response.statusText);
         }
@@ -28,5 +29,18 @@ export const getQuizById = async (id: number):Promise<IQuiz | null> => {
     }catch(error) {
         console.log(`Error: QuizService: getQuizById (${id}) | ` + error);
         throw error;
+    }
+}
+
+export const postQuizResults = async (quizResults:IQuizResult) => {
+    try {
+        const response = await fetch(`${API_URL}/quizzes/quiz-results`, {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(quizResults)
+        });
+
+    } catch (error) {
+        console.log(`Error: QuizService: postQuizResults | ` + error);
     }
 }
