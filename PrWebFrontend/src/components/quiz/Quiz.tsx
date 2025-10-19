@@ -17,11 +17,12 @@ type QuizProps = {
     disabled: boolean
 };
 const Quiz = ({quiz, quizResult, setQuizResult, onSubmit, disabled}:QuizProps) => {
-    
+    const startTimeRef = useRef<number>(Date.now());
     const [quizTimer, setQuizTimer] = useState<number>(quiz.timeSeconds);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
     const timerIdRef = useRef<number | undefined>(undefined);
     const finishedButtonRef = useRef<HTMLButtonElement | null>(null);
+    const [allowedToFinish, setAllowedToFinish] = useState<boolean>(false);
 
     useEffect(() => {
         if(quizResult) {
@@ -33,34 +34,38 @@ const Quiz = ({quiz, quizResult, setQuizResult, onSubmit, disabled}:QuizProps) =
     }, [quizResult?.timeNeededSeconds]);
 
     useEffect(() => {
-
-        timerIdRef.current = setInterval(() => {
+            startTimeRef.current = Date.now();
+            timerIdRef.current = setInterval(() => {
             setQuizTimer(prev => {
                 if (prev <= 1) {
                     clearInterval(timerIdRef.current);
                     handleSubmit();
                     return 0;
                 }
+                
                 return prev - 1;
             });
-        }, 1000);
+            const totalElapsed = Math.floor((Date.now() - startTimeRef.current) / 1000);
+            if (totalElapsed >= 1) setAllowedToFinish(true);
+            }, 1000);
 
         return () => clearInterval(timerIdRef.current);
     }, []);
 
     const handleFinishedButtonClicked = () => {
         if(timerIdRef.current) clearInterval(timerIdRef.current);
-        setQuizTimer(timer => 0);
         handleSubmit();
     }
 
     const handleSubmit = () => {
+        if(!quizResult) return;
         finishedButtonRef.current?.setAttribute("disabled", "true");
+        const totalElapsed = Math.floor((Date.now() - startTimeRef.current) / 1000);
         setQuizResult(prev => {
             if(!prev) return prev;
             return {
                 ...prev,
-                timeNeededSeconds: quiz.timeSeconds - quizTimer
+                timeNeededSeconds: totalElapsed
             };
         });
     }
@@ -158,7 +163,7 @@ const Quiz = ({quiz, quizResult, setQuizResult, onSubmit, disabled}:QuizProps) =
             </div>
             <div className={styles.buttons}>
                 <div className={styles.page_button}><button onClick={handlePrevButtonClicked} disabled={currentQuestionIndex === 0 ? true : false}>&lt;&nbsp;Previous</button></div>
-                <div className={styles.finish_button}><button ref={finishedButtonRef} onClick={handleFinishedButtonClicked}>Finish</button></div>
+                <div className={styles.finish_button}><button disabled={!allowedToFinish} ref={finishedButtonRef} onClick={handleFinishedButtonClicked}>Finish</button></div>
                 <div className={styles.page_button}><button onClick={handleNextButtonClicked} disabled={currentQuestionIndex === (quiz.questions.length - 1) ? true : false}>Next&nbsp;&gt;</button></div>
             </div>
         </div>

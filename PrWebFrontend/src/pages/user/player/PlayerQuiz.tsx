@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Quiz from "../../../components/quiz/Quiz";
 import { sidebarItems } from "../../../constants/SidebarItems";
 import UserLayout from "../UserLayout";
@@ -17,6 +17,7 @@ const PlayerQuiz = ({quizId}:{quizId:string}) => {
     const [quizResult, setQuizResult] = useState<IQuizResult | undefined>(undefined);
     const [quizResultResponse, setQuizResultResponse] = useState<IQuizResultResponse | null>(null);
 
+    
     useEffect(() => {
         loadData(quizId);
     }, []);
