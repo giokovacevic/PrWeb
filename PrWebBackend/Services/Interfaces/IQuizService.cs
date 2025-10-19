@@ -8,7 +8,7 @@ namespace PrWebBackend.Services.Interfaces
         public List<QuizDTO> GetAllQuizzes();
         public QuizDTO GetQuizById(int quizId);
         public QuizResultDTO AddQuizResult(QuizResultRequestDTO quizResultRequestDTO);
-        public QuizResultDTO GetAllQuizResultsByUserId(int userId);
+        public List<QuizResultDTO> GetAllQuizResultsByUserId(int userId);
         public List<QuizResultDTO> GetAllQuizResults();
     }
 }

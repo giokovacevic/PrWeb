@@ -8,5 +8,6 @@ namespace PrWebBackend.Repositories.Interfaces
         public List<Quiz> ReadAllQuizzes();
         public Quiz ReadQuizById(int id);
         public void CreateQuizResult(QuizResult quizResult);
+        public List<QuizResult> ReadAllQuizResultsByUserId(int userId);
     }
 }

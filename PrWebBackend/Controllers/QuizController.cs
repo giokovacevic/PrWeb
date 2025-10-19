@@ -38,5 +38,12 @@ namespace PrWebBackend.Controllers
             if (quizResultDTO == null) return BadRequest();
             return Ok(quizResultDTO);
         }
+
+        [HttpGet("quiz-result/{id}")]
+        public List<QuizResultDTO> GetAllQuizResultsByUserId(int id) // TODO:
+        {
+            List<QuizResultDTO> quizResultDTOs = _quizService.GetAllQuizResultsByUserId(id);
+            return quizResultDTOs;
+        }
     }
 }

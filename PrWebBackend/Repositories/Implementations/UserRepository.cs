@@ -33,10 +33,6 @@ namespace PrWebBackend.Repositories.Implementations
         {
             string query = $"INSERT INTO User({Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}" +(user.Role != null ? $",{Columns["RoleId"]}" : "" )+ ") VALUES (@username, @email, @password, @imageUrl" + (user.Role != null ? $",@roleId" : "") + ")";
 
-            /*string query = (user.Role == null) 
-                ? $"INSERT INTO User({Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}) VALUES (@username, @email, @password, @imageUrl)"
-                : $"INSERT INTO User({Columns[nameof(User.Username)]}, {Columns[nameof(User.Email)]}, {Columns[nameof(User.Password)]}, {Columns[nameof(User.ImageUrl)]}, {Columns["RoleId"]}) VALUES (@username, @email, @password, @imageUrl, @roleId)";*/
-
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();

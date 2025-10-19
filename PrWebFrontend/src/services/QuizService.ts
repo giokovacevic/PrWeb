@@ -10,7 +10,6 @@ export const getAllQuizzes = async ():Promise<IQuiz[]> => {
             throw new Error(`Error fetching in QuizService: getAllQuizes | ` + response.statusText);
         }
         const data:IQuiz[] = await response.json();
-        console.log(data);
         return data;
     }catch(error) {
         console.log(`Error: QuizService: getAllQuizes | ` + error);
@@ -25,7 +24,6 @@ export const getQuizById = async (id: string):Promise<IQuiz | null> => {
             throw new Error(`Error fetching in QuizService: getQuizById (${id}) | ` + response.statusText);
         }
         const data:IQuiz | null = await response.json();
-        console.log(data);
         return data;
     }catch(error) {
         console.log(`Error: QuizService: getQuizById (${id}) | ` + error);
@@ -45,6 +43,20 @@ export const postQuizResults = async (quizResults:IQuizResult):Promise<IQuizResu
 
     } catch (error) {
         console.log(`Error: QuizService: postQuizResults | ` + error);
+        throw error;
+    }
+}
+
+export const getAllQuizResultsByUserId = async (userId: number):Promise<IQuizResultResponse[]> => {
+    try{
+        const response = await fetch(`${API_URL}/quizzes/quiz-result/${userId}`);
+        if(!response.ok) {
+            throw new Error(`Error fetching in QuizService: getAllQuizResultsByUserId (${userId}) | ` + response.statusText);
+        }
+        const data:IQuizResultResponse[] = await response.json();
+        return data;
+    }catch(error) {
+        console.log(`Error: QuizService: getAllQuizResultsByUserId (${userId}) | ` + error);
         throw error;
     }
 }

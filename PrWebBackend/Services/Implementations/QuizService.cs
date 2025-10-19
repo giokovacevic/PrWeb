@@ -41,15 +41,20 @@ namespace PrWebBackend.Services.Implementations
             Quiz quiz = _quizRepository.ReadQuizById(quizResultRequestDTO.QuizId);
             if (quiz == null) return null;
             QuizResult quizResult = evaluateQuizResult(quiz, quizResultRequestDTO);
-            //_quizRepository.CreateQuizResult(quizResult);
-
+            _quizRepository.CreateQuizResult(quizResult);
             
             return new QuizResultDTO(quizResult);
         }
 
-        public QuizResultDTO GetAllQuizResultsByUserId(int userId) // TODO:
+        public List<QuizResultDTO> GetAllQuizResultsByUserId(int userId)
         {
-            return null;
+            List<QuizResult> quizResults = _quizRepository.ReadAllQuizResultsByUserId(userId);
+            List<QuizResultDTO> quizResultDTOs = new List<QuizResultDTO>();
+            foreach (QuizResult quizResult in quizResults)
+            {
+                if (quizResult != null) quizResultDTOs.Add(new QuizResultDTO(quizResult));
+            }
+            return quizResultDTOs;
         }
 
         public List<QuizResultDTO> GetAllQuizResults() // TODO:

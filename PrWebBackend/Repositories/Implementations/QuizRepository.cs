@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using PrWebBackend.Models;
+using PrWebBackend.Models.NamespaceUser;
 using PrWebBackend.Models.Quiz;
 using PrWebBackend.Repositories.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,6 +22,13 @@ namespace PrWebBackend.Repositories.Implementations
         private const string QuestionOptionId = "QuestionOptionId";
         private const string QuestionOptionText = "QuestionOptionText";
         private const string QuestionOptionCorrect = "QuestionOptionCorrect";
+        private const string UserId = "UserId";
+        private const string UserUsername = "UserUsername";
+        private const string QuizResultDate = "QuizResultDate";
+        private const string QuizResultId = "QuizResultId";
+        private const string QuizResultTimeNeeded = "QuizResultTimeNeeded";
+        private const string QuizResultCorrectAmount = "QuizResultCorrectAmount";
+        private const string QuizResultPoints = "QuizResultPoints";
 
         private readonly string _connectionString;
 
@@ -42,7 +51,16 @@ namespace PrWebBackend.Repositories.Implementations
             
             {QuestionOptionId, "questionoption_id" },
             {QuestionOptionText, "questionoption_text" },
-            {QuestionOptionCorrect, "questionoption_correct" }
+            {QuestionOptionCorrect, "questionoption_correct" },
+           
+            {UserId, "user_id"},
+            {UserUsername, "user_username"},
+
+            {QuizResultId, "quizresult_id" },
+            {QuizResultDate, "quizresult_date" },
+            {QuizResultTimeNeeded, "quizresult_time_needed" },
+            {QuizResultCorrectAmount, "quizresult_correct_amount" },
+            {QuizResultPoints, "quizresult_points" },
         };
 
         public QuizRepository(string connectionString)
@@ -193,8 +211,60 @@ namespace PrWebBackend.Repositories.Implementations
 
         public void CreateQuizResult(QuizResult quizResult)
         {
+            string query = "INSERT INTO QuizResult(`quiz_id`, `user_id`, `quizresult_date`, `quizresult_time_needed`, `quizresult_correct_amount`, `quizresult_points`) VALUES (@param1, @param2, @param3, @param4, @param5, @param6);";
 
+            using (MySqlConnection connection = new MySqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@param1", quizResult.Quiz.Id); // + quiz_name + quiz_difficulty
+                    command.Parameters.AddWithValue("@param2", quizResult.UserId); // + user_name
+                    command.Parameters.AddWithValue("@param3", quizResult.Datetime);
+                    command.Parameters.AddWithValue("@param4", quizResult.TimeNeededSeconds);
+                    command.Parameters.AddWithValue("@param5", quizResult.CorrectAnswers); // preko counta max
+                    command.Parameters.AddWithValue("@param6", quizResult.Points); // count * 5
+
+                    command.ExecuteNonQuery();
+                }
+            }
         }
+        public List<QuizResult> ReadAllQuizResultsByUserId(int userId)
+        {
+            List<QuizResult> quizResults = new List<QuizResult>();
+
+            string quizResultAlias = "qr";
+            string userAlias = "u";
+
+            string query = "SELECT quizresult_id, quiz_id, qr.user_id as user_id, user_username, quizresult_date, quizresult_time_needed, quizresult_correct_amount, quizresult_points from QuizResult qr INNER JOIN User u on qr.user_id = u.user_id  WHERE qr.user_id = @userId;";
+
+            using (MySqlConnection connection = new MySqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+                    
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            quizResults.Add(ExtractQuizResultFromReader(reader));
+                        }
+                    }
+                }
+            }
+
+            foreach(QuizResult quizResult in quizResults)
+            {
+                quizResult.Quiz = ReadQuizById(quizResult.QuizId);
+            }
+
+            return quizResults;
+        }
+
 
         private Quiz ExtractQuizFromReader(MySqlDataReader reader)
         {
@@ -272,6 +342,20 @@ namespace PrWebBackend.Repositories.Implementations
                 if (option.Id == optionId) return option;
             }
             return null;
+        }
+
+        private QuizResult ExtractQuizResultFromReader(MySqlDataReader reader)
+        {
+            int id = reader.GetInt32(reader.GetOrdinal(Columns[nameof(QuizResultId)]));
+            int quizId = reader.GetInt32(reader.GetOrdinal(Columns[nameof(Quiz.Id)]));
+            int userId = reader.GetInt32(reader.GetOrdinal(Columns[UserId]));
+            string userUsername = reader.GetString(reader.GetOrdinal(Columns[UserUsername]));
+            DateTime date = reader.GetDateTime(reader.GetOrdinal(Columns[QuizResultDate]));
+            int timeNeeded = reader.GetInt32(reader.GetOrdinal(Columns[QuizResultTimeNeeded]));
+            int correctAmount = reader.GetInt32(reader.GetOrdinal(Columns[QuizResultCorrectAmount]));
+            int points = reader.GetInt32(reader.GetOrdinal(Columns[QuizResultPoints]));
+           
+            return new QuizResult(id, null, quizId, userUsername, userId, date, timeNeeded, correctAmount, points);
         }
     }
 }
