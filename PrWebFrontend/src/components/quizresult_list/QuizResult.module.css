@@ -1,0 +1,38 @@
+.root{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header_item, .item{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+.header_item{
+    background: linear-gradient(white, rgb(209, 209, 209));
+    border-bottom: 2px solid black;
+}
+.item{
+    background-color: white;
+}
+.item > div,
+.header_item > div{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.quiz_name{
+    font-weight: bold;
+}
+.time{
+    color: rgb(8, 42, 235);
+}
+.points > span, 
+.answers > span{
+    color: rgb(114, 114, 114);
+}

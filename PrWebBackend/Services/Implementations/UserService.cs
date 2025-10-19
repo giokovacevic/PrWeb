@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
-using PrWebBackend.DTOs;
 using PrWebBackend.DTOs.Auth;
-using PrWebBackend.Models;
+using PrWebBackend.DTOs.User;
+using PrWebBackend.Models.NamespaceUser;
 using PrWebBackend.Repositories.Interfaces;
 using PrWebBackend.Services.Interfaces;
 using System;

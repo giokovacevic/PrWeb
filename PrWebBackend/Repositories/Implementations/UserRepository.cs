@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using PrWebBackend.Models;
+using PrWebBackend.Models.NamespaceUser;
 using PrWebBackend.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;

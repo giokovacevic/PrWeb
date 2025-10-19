@@ -1,4 +1,5 @@
 import type IQuiz from '../../types/models/quiz/IQuiz';
+import { getDifficultyColor } from '../../utils/Helper';
 import styles from './QuizList.module.css';
 
 type QuizListProps = {
@@ -6,19 +7,6 @@ type QuizListProps = {
 };
 
 const QuizList = ({quizes}:QuizListProps) => {
-
-    const getDifficultyColor = (value:string) => {
-        switch(value) {
-            case "Easy":
-                return "#00c45f";
-            case "Medium":
-                return "#d48200";
-            case "Hard":
-                return "#e30f00";
-            default:
-                return "";
-        }
-    }
 
     return (
         <div className={styles.root}>

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrWebBackend.DTOs;
+using PrWebBackend.DTOs.User;
 using PrWebBackend.Services.Interfaces;
 using System.Collections.Generic;
 

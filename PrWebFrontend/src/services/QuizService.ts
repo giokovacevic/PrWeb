@@ -1,5 +1,6 @@
 import type IQuiz from "../types/models/quiz/IQuiz"
 import type IQuizResult from "../types/models/quiz/IQuizResult";
+import type IQuizResultResponse from "../types/responses/IQuizResultResponse";
 import { API_URL } from "../utils/Config";
 
 export const getAllQuizzes = async ():Promise<IQuiz[]> => {
@@ -32,16 +33,18 @@ export const getQuizById = async (id: string):Promise<IQuiz | null> => {
     }
 }
 
-export const postQuizResults = async (quizResults:IQuizResult) => {
+export const postQuizResults = async (quizResults:IQuizResult):Promise<IQuizResultResponse> => {
     try {
-        console.log(quizResults);
-        await fetch(`${API_URL}/quizzes/quiz-result`, {
+        const response = await fetch(`${API_URL}/quizzes/quiz-result`, {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(quizResults)
         });
+        if(!response.ok) throw new Error(`Error: QuizService: postQuizResults | ` + response.statusText);
+        return await response.json();
 
     } catch (error) {
         console.log(`Error: QuizService: postQuizResults | ` + error);
+        throw error;
     }
 }

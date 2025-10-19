@@ -13,6 +13,7 @@ namespace PrWebBackend.DTOs.Quiz
     public class QuizResultRequestDTO
     {
         public int UserId { get; set; }
+        public string UserUsername { get; set; }
         public int QuizId { get; set; }
         public int TimeNeededSeconds { get; set; }
         public List<AnswerDTO> Answers { get; set; }

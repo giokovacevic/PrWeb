@@ -1,4 +1,4 @@
-﻿using PrWebBackend.Models;
+﻿using PrWebBackend.Models.NamespaceUser;
 using System.Collections.Generic;
 
 namespace PrWebBackend.Repositories.Interfaces

@@ -49,7 +49,7 @@ namespace PrWebBackend.Repositories.Implementations
         {
             _connectionString = connectionString;
         }
-        public List<Quiz> ReadAll()
+        public List<Quiz> ReadAllQuizzes()
         {
             Dictionary<int, Quiz> quizDictionary = new Dictionary<int, Quiz>();
 
@@ -123,7 +123,7 @@ namespace PrWebBackend.Repositories.Implementations
             return quizDictionary.Values.ToList<Quiz>();
         }
 
-        public Quiz ReadById(int id)
+        public Quiz ReadQuizById(int id)
         {
             Quiz quiz = null;
 
@@ -189,6 +189,11 @@ namespace PrWebBackend.Repositories.Implementations
             }
 
             return quiz;
+        }
+
+        public void CreateQuizResult(QuizResult quizResult)
+        {
+
         }
 
         private Quiz ExtractQuizFromReader(MySqlDataReader reader)

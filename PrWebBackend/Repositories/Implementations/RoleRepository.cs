@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using PrWebBackend.Models;
+using PrWebBackend.Models.NamespaceUser;
 using PrWebBackend.Repositories.Interfaces;
 using System.Collections.Generic;
 

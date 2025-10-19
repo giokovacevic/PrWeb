@@ -1,7 +1,7 @@
-﻿using PrWebBackend.Models;
+﻿using PrWebBackend.Models.NamespaceUser;
 using System;
 
-namespace PrWebBackend.DTOs
+namespace PrWebBackend.DTOs.User
 {
     public class RoleDTO
     {

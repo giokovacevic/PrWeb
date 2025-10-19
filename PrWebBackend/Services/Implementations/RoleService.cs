@@ -1,5 +1,5 @@
-﻿using PrWebBackend.DTOs;
-using PrWebBackend.Models;
+﻿using PrWebBackend.DTOs.User;
+using PrWebBackend.Models.NamespaceUser;
 using PrWebBackend.Repositories.Interfaces;
 using PrWebBackend.Services.Interfaces;
 using System.Collections.Generic;

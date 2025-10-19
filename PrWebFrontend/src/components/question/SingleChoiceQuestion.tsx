@@ -7,11 +7,12 @@ type SingleChoiceQuestionProps = {
     selectedOptionId?: number | null;
     options: IOption[] | null;
     onChange: (choiceId:number | null) => void;
+    disabled: boolean;
 }
 
-const SingleChoiceQuestion = ({text, options, selectedOptionId, onChange}:SingleChoiceQuestionProps) => {
+const SingleChoiceQuestion = ({text, options, selectedOptionId, onChange, disabled}:SingleChoiceQuestionProps) => {
     return (
-        <Question text={text}>
+        <Question text={text} disabled={disabled}>
             <div className={styles.content}>
                 {options && options.map(o => <div key={o.id} className={o.id === selectedOptionId ? styles.option_highlighted : styles.option} onClick={(o.id === selectedOptionId) ? (() => onChange(null)) : (() => onChange(o.id))}>{o.text}</div>)}
             </div>

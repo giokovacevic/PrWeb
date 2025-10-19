@@ -1,4 +1,4 @@
-﻿namespace PrWebBackend.Models
+﻿namespace PrWebBackend.Models.NamespaceUser
 {
     public class Role
     {

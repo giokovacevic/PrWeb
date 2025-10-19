@@ -7,9 +7,10 @@ type MultiChoiceQuestionProps = {
     selectedOptionIds?: number[] | null;
     options: IOption[] | null;
     onChange: (choiceId:number[] | null) => void;
+     disabled: boolean;
 }
 
-const MultiChoiceQuestion = ({text, options, selectedOptionIds, onChange}:MultiChoiceQuestionProps) => {
+const MultiChoiceQuestion = ({text, options, selectedOptionIds, onChange, disabled}:MultiChoiceQuestionProps) => {
 
     const handleOptionClicked = (optionId: number) => {
         if (selectedOptionIds?.includes(optionId)) {
@@ -20,7 +21,7 @@ const MultiChoiceQuestion = ({text, options, selectedOptionIds, onChange}:MultiC
     }
 
     return (
-        <Question text={text}>
+        <Question text={text} disabled={disabled}>
             <div className={styles.content}>
                 {options && options.map(o => <div key={o.id} className={selectedOptionIds?.includes(o.id) ? styles.option_highlighted : styles.option} onClick={() => handleOptionClicked(o.id)}>{o.text}</div>)}
             </div>

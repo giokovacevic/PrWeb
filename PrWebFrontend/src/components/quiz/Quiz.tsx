@@ -10,12 +10,13 @@ import MultiChoiceQuestion from '../question/MultiChoiceQuestion';
 import type IQuizResult from '../../types/models/quiz/IQuizResult';
 
 type QuizProps = {
-    quiz: IQuiz;
-    onSubmit?: () => void;
-    quizResult: IQuizResult | undefined;
-    setQuizResult: React.Dispatch<React.SetStateAction<IQuizResult | undefined>>;
-}
-const Quiz = ({quiz, quizResult, setQuizResult, onSubmit}:QuizProps) => {
+    quiz: IQuiz,
+    onSubmit?: () => void,
+    quizResult: IQuizResult | undefined,
+    setQuizResult: React.Dispatch<React.SetStateAction<IQuizResult | undefined>>,
+    disabled: boolean
+};
+const Quiz = ({quiz, quizResult, setQuizResult, onSubmit, disabled}:QuizProps) => {
     
     const [quizTimer, setQuizTimer] = useState<number>(quiz.timeSeconds);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -59,7 +60,7 @@ const Quiz = ({quiz, quizResult, setQuizResult, onSubmit}:QuizProps) => {
             if(!prev) return prev;
             return {
                 ...prev,
-                timeNeededSeconds: quizTimer
+                timeNeededSeconds: quiz.timeSeconds - quizTimer
             };
         });
     }
@@ -81,16 +82,16 @@ const Quiz = ({quiz, quizResult, setQuizResult, onSubmit}:QuizProps) => {
         switch(question.type) {
         case "FILL_IN":
             const currentAnswer = quizResult?.answers.find(a => a.questionId === question.id)?.answer;
-            return <FillQuestion text={question.text} answer={currentAnswer} onChange={newAnswer => handleAnswerChange(question.id, newAnswer)}/>
+            return <FillQuestion disabled={disabled} text={question.text} answer={currentAnswer} onChange={newAnswer => handleAnswerChange(question.id, newAnswer)}/>
         case "TRUE_FALSE":
             const currentStatement = quizResult?.answers.find(a => a.questionId === question.id)?.correct;
-            return <TrueFalseQuestion text={question.text} statement={currentStatement} onChange={newStatement => handleStatementChange(question.id, newStatement)}/>
+            return <TrueFalseQuestion disabled={disabled} text={question.text} statement={currentStatement} onChange={newStatement => handleStatementChange(question.id, newStatement)}/>
         case "SINGLE_CHOICE":
             const currentSelection = quizResult?.answers.find(a => a.questionId === question.id)?.selectionId;
-            return <SingleChoiceQuestion text={question.text} options={question.options} selectedOptionId={currentSelection} onChange={(newSelection) => handleSelectionChange(question.id, newSelection)}/>
+            return <SingleChoiceQuestion disabled={disabled} text={question.text} options={question.options} selectedOptionId={currentSelection} onChange={(newSelection) => handleSelectionChange(question.id, newSelection)}/>
         case "MULTI_CHOICE":
              const currentSelections = quizResult?.answers.find(a => a.questionId === question.id)?.optionIds;   
-            return <MultiChoiceQuestion text={question.text} options={question.options} selectedOptionIds={currentSelections} onChange={(newSelections => handleSelectionsChange(question.id, newSelections))}/>
+            return <MultiChoiceQuestion disabled={disabled} text={question.text} options={question.options} selectedOptionIds={currentSelections} onChange={(newSelections => handleSelectionsChange(question.id, newSelections))}/>
          default:
             return null;   
         }

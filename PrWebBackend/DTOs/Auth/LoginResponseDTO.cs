@@ -1,4 +1,5 @@
-﻿using PrWebBackend.Models;
+﻿using PrWebBackend.DTOs.User;
+using PrWebBackend.Models.NamespaceUser;
 using System;
 
 namespace PrWebBackend.DTOs.Auth
@@ -8,7 +9,7 @@ namespace PrWebBackend.DTOs.Auth
         private string token;
         private UserDTO user;
 
-        public LoginResponseDTO(string token, User user)
+        public LoginResponseDTO(string token, Models.NamespaceUser.User user)
         {
             if (user == null) throw new ArgumentNullException();
             Token = token;

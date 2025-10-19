@@ -34,8 +34,9 @@ namespace PrWebBackend.Controllers
         [HttpPost("quiz-result")]
         public IActionResult PostQuizResults([FromBody] QuizResultRequestDTO quizResultRequestDTO) // TODO:
         {
-            _quizService.AddQuizResult(quizResultRequestDTO);
-            return Ok();
+            QuizResultDTO quizResultDTO = _quizService.AddQuizResult(quizResultRequestDTO);
+            if (quizResultDTO == null) return BadRequest();
+            return Ok(quizResultDTO);
         }
     }
 }

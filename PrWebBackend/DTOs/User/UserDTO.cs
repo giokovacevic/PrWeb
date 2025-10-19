@@ -1,7 +1,8 @@
 ﻿using PrWebBackend.Models;
+using PrWebBackend.Models.NamespaceUser;
 using System;
 
-namespace PrWebBackend.DTOs
+namespace PrWebBackend.DTOs.User
 {
     public class UserDTO
     {
@@ -13,7 +14,7 @@ namespace PrWebBackend.DTOs
 
         public UserDTO() { }
 
-        public UserDTO(User user)
+        public UserDTO(Models.NamespaceUser.User user)
         {
             if (user == null) throw new ArgumentNullException(nameof(user), "User cannot be NULL");
             if (user.Role == null) throw new ArgumentNullException(nameof(user.Role), "Role in User cannot be NULL");
