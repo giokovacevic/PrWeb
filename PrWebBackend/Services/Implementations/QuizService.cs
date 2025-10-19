@@ -35,7 +35,7 @@ namespace PrWebBackend.Services.Implementations
 
         public QuizResultDTO AddQuizResult(QuizResultRequestDTO quizResultRequestDTO) // TODO:
         {
-            // check right an dwrong answers
+            // check right and wrong answers
             // create QuizResult.cs instance
             // write it to repo
             // return QuizResultDTO back

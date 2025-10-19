@@ -34,6 +34,7 @@ export const getQuizById = async (id: string):Promise<IQuiz | null> => {
 
 export const postQuizResults = async (quizResults:IQuizResult) => {
     try {
+        console.log(quizResults);
         await fetch(`${API_URL}/quizzes/quiz-result`, {
             method: 'POST',
             headers: {'Content-Type':'application/json'},

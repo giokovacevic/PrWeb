@@ -16,12 +16,20 @@ type QuizProps = {
     setQuizResult: React.Dispatch<React.SetStateAction<IQuizResult | undefined>>;
 }
 const Quiz = ({quiz, quizResult, setQuizResult, onSubmit}:QuizProps) => {
-  
+    
     const [quizTimer, setQuizTimer] = useState<number>(quiz.timeSeconds);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
     const timerIdRef = useRef<number | undefined>(undefined);
     const finishedButtonRef = useRef<HTMLButtonElement | null>(null);
-    
+
+    useEffect(() => {
+        if(quizResult) {
+            if (quizResult.timeNeededSeconds > 0) {
+            onSubmit ? onSubmit() : null;
+        }
+        }
+        
+    }, [quizResult?.timeNeededSeconds]);
 
     useEffect(() => {
 
@@ -47,7 +55,13 @@ const Quiz = ({quiz, quizResult, setQuizResult, onSubmit}:QuizProps) => {
 
     const handleSubmit = () => {
         finishedButtonRef.current?.setAttribute("disabled", "true");
-        onSubmit ? onSubmit() : null;
+        setQuizResult(prev => {
+            if(!prev) return prev;
+            return {
+                ...prev,
+                timeNeededSeconds: quizTimer
+            };
+        });
     }
 
     const handlePrevButtonClicked = () => {

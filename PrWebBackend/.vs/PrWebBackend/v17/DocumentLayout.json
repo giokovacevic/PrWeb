@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\dtos\\quiz\\quizresultrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:dtos\\quiz\\quizresultrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\services\\implementations\\quizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,20 +19,20 @@
       "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:services\\interfaces\\iquizservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\models\\quiz\\quizresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:models\\quiz\\quizresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\dtos\\quiz\\quizresultrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:dtos\\quiz\\quizresultrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\models\\quiz\\quizresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|solutionrelative:models\\quiz\\quizresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC3C9F61-6DB2-471B-B895-3F43B70DD8BE}|PrWebBackend.csproj|c:\\users\\ogi\\documents\\ftn\\primenjeni web\\projekat\\prwebbackend\\dtos\\quiz\\quizresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -138,7 +138,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -154,30 +154,34 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "QuizResultRequestDTO.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Quiz\\QuizResultRequestDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Quiz\\QuizResultRequestDTO.cs",
               "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\DTOs\\Quiz\\QuizResultRequestDTO.cs",
               "RelativeToolTip": "DTOs\\Quiz\\QuizResultRequestDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T18:59:16.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "QuizResult.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\QuizResult.cs",
               "RelativeDocumentMoniker": "Models\\Quiz\\QuizResult.cs",
               "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Models\\Quiz\\QuizResult.cs",
               "RelativeToolTip": "Models\\Quiz\\QuizResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T18:35:20.597Z",
               "EditorCaption": ""
@@ -216,7 +220,7 @@
               "RelativeDocumentMoniker": "Services\\Implementations\\QuizService.cs",
               "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Implementations\\QuizService.cs",
               "RelativeToolTip": "Services\\Implementations\\QuizService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA2wBYAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwB8AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T16:02:10.015Z",
               "EditorCaption": ""
@@ -405,20 +409,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "QuizController.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\QuizController.cs",
               "RelativeDocumentMoniker": "Controllers\\QuizController.cs",
               "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\QuizController.cs",
               "RelativeToolTip": "Controllers\\QuizController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA2wB0AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwCYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T14:27:34.314Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Implementations\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\UserService.cs",
@@ -483,20 +487,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAIBBwBIAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-14T16:24:29.721Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Documents\\FTN\\Primenjeni Web\\Projekat\\PrWebBackend\\Services\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
