@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PrWebBackend.DTOs.Auth;
 using PrWebBackend.DTOs.User;
 using PrWebBackend.Services.Interfaces;
@@ -18,6 +19,7 @@ namespace PrWebBackend.Controllers
         }
 
         [HttpGet("all")]
+        [Authorize(Roles = "admin")]
         public List<UserDTO> GetAll()
         {
             return _userService.GetAll();

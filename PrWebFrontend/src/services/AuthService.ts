@@ -15,7 +15,10 @@ export const login = async (loginRequest:ILoginRequest):Promise<ILoginResponse> 
         throw new Error("Invalid Credentials");
     }
 
+   
+
     const data:ILoginResponse = await response.json();
+     console.log(data.token);
     return data;
 } 
 
@@ -34,7 +37,7 @@ export const register = async (formData: FormData):Promise<IRegisterResponse> =>
 
 export const authenticate = (token: string | null, user: IUser | null):boolean => {
     if(token){
-        localStorage.setItem('token', token);
+        localStorage.setItem('jwtToken', token);
         localStorage.setItem('user', JSON.stringify(user));
         return true;
     }
@@ -42,16 +45,16 @@ export const authenticate = (token: string | null, user: IUser | null):boolean =
 }
 
 export const isAuthenticated = ():boolean => {
-    return !!localStorage.getItem('token');
+    return !!localStorage.getItem('jwtToken');
 }
 
 export const unauthenticate = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwtToken');
     localStorage.removeItem('user');
 }
 
 export const getToken = () => {
-    return localStorage.getItem('token');
+    return localStorage.getItem('jwtToken');
 }
 
 export const getUser = (): IUser|null => {

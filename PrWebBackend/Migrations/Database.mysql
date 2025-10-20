@@ -1,0 +1,76 @@
+DROP SCHEMA IF EXISTS `prweb_test_db`;
+CREATE SCHEMA  `prweb_test_db`;
+USE `prweb_test_db`;
+
+CREATE TABLE `Role`(
+    `role_id` int AUTO_INCREMENT NOT NULL,
+    `role_name` varchar(255) NOT NULL UNIQUE, 
+    PRIMARY KEY(`role_id`)
+);
+
+CREATE TABLE `User`(
+	`user_id` int AUTO_INCREMENT NOT NULL,
+    `user_username` varchar(255) NOT NULL UNIQUE,
+    `user_email` varchar(255) NOT NULL UNIQUE,
+    `user_password` varchar(255) NOT NULL,
+    `user_imageurl` varchar(255) DEFAULT NULL,
+    `role_id` int NOT NULL DEFAULT 2,
+    PRIMARY KEY(`user_id`),
+    FOREIGN KEY(`role_id`) REFERENCES `Role`(`role_id`)
+);
+
+CREATE TABLE `Difficulty`(
+    `difficulty_id` int NOT NULL AUTO_INCREMENT,
+    `difficulty_value` varchar(255) NOT NULL,
+    PRIMARY KEY(`difficulty_id`)
+);
+
+CREATE TABLE `Quiz`(
+    `quiz_id` int AUTO_INCREMENT NOT NULL,
+    `quiz_name` VARCHAR(255) NOT NULL UNIQUE,
+    `quiz_time_in_seconds` int NOT NULL DEFAULT 120,
+    `difficulty_id` int NOT NULL DEFAULT 1,
+    `quiz_description` VARCHAR(255) NOT NULL DEFAULT "",
+    PRIMARY KEY(`quiz_id`),
+    FOREIGN KEY(`difficulty_id`) REFERENCES `Difficulty`(`difficulty_id`)
+);
+
+CREATE TABLE `Question`(
+    `question_id` int AUTO_INCREMENT NOT NULL,
+    `question_type` enum('SINGLE_CHOICE', 'MULTI_CHOICE', 'TRUE_FALSE', 'FILL_IN') NOT NULL,
+    `question_text` varchar(255) NOT NULL,
+    `question_theme` varchar(255) NOT NULL,
+    `question_answer` varchar(255) DEFAULT NULL,
+    `question_correct` boolean DEFAULT NULL,
+    PRIMARY KEY(`question_id`)
+);
+
+CREATE TABLE `QuizQuestion`(
+    `quiz_id` int NOT NULL,
+    `question_id` int NOT NULL,
+    PRIMARY KEY(`quiz_id`, `question_id`),
+    FOREIGN KEY(`quiz_id`) REFERENCES `Quiz`(`quiz_id`),
+    FOREIGN KEY(`question_id`) REFERENCES `Question`(`question_id`)
+);
+
+CREATE TABLE `QuestionOption`(
+    `questionoption_id` int  NOT NULL AUTO_INCREMENT,
+    `questionoption_text` varchar(255) NOT NULL,
+    `questionoption_correct` boolean NOT NULL,
+    `question_id` int NOT NULL,
+    PRIMARY KEY(`questionoption_id`),
+    FOREIGN KEY(`question_id`) REFERENCES `Question`(`question_id`)
+);
+
+CREATE TABLE `QuizResult`(
+	`quizresult_id` int NOT NULL AUTO_INCREMENT,
+	`quiz_id` int NOT NULL,
+    `user_id` int NOT NULL,
+    `quizresult_date` timestamp NOT NULL,
+    `quizresult_time_needed` int NOT NULL,
+    `quizresult_correct_amount` int NOT NULL,
+    `quizresult_points` int NOT NULL,
+    PRIMARY KEY(`quizresult_id`),
+    FOREIGN KEY(`quiz_id`) REFERENCES `Quiz`(`quiz_id`),
+    FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`)
+);

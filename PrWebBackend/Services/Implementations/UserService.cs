@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using PrWebBackend.DTOs.Auth;
 using PrWebBackend.DTOs.User;
 using PrWebBackend.Models.NamespaceUser;
@@ -6,7 +8,12 @@ using PrWebBackend.Repositories.Interfaces;
 using PrWebBackend.Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IdentityModel.Tokens.Jwt;
 using System.IO;
+using System.Security.Claims;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace PrWebBackend.Services.Implementations
 {
@@ -14,11 +21,13 @@ namespace PrWebBackend.Services.Implementations
     {
         private readonly IUserRepository _userRepository;
         private readonly IWebHostEnvironment _environment;
+        private readonly IConfiguration _configuration;
 
-        public UserService(IUserRepository userRepository, IWebHostEnvironment environment)
+        public UserService(IUserRepository userRepository, IWebHostEnvironment environment, IConfiguration configuration)
         {
             _userRepository = userRepository;
             _environment = environment;
+            _configuration = configuration;
         }
 
         public List<UserDTO> GetAll()
@@ -42,9 +51,22 @@ namespace PrWebBackend.Services.Implementations
             bool isValid = BCrypt.Net.BCrypt.Verify(loginDTO.Password, user.Password);
             if (!isValid) return null;
 
-            // TODO: Generate JWT token
+            List<Claim> claims = new List<Claim>();
+            claims.Add(new Claim(ClaimTypes.Role, user.Role.Name));
 
-            return new LoginResponseDTO("34#3_temporary_cookie743y47ryt6", user);
+            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var signInCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var tokenOptions = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddMinutes(30),
+                signingCredentials: signInCredentials
+            );
+
+
+            string token =  new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+            return new LoginResponseDTO(token, user);
         }
 
         public RegisterResponseDTO Register(RegisterDTO registerDTO)
@@ -79,6 +101,13 @@ namespace PrWebBackend.Services.Implementations
                 response.Messages.Add($"Password has to be at least 8 characters long.");
             }
 
+            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            if (!Regex.IsMatch(registerDTO.Email, pattern, RegexOptions.IgnoreCase))
+            {
+                isValid = false;
+                response.Messages.Add($"{registerDTO.Email} is in wrong format.");
+            }
+
             string imageUrl = null;
             if (isValid)
             {
@@ -100,8 +129,6 @@ namespace PrWebBackend.Services.Implementations
                     imageUrl = "/uploads/" + fileName;
                 }
             }
-
-            // TODO: VALIDATE EMAIL?
 
             response.Successful = isValid;
             if(response.Successful)

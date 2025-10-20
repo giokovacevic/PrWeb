@@ -8,14 +8,14 @@ import { useAuth } from '../../contexts/AuthContext';
 import Loading from '../../components/loading/Loading';
 
 const Login = () => {
-    const {user, loading, handleLogin} = useAuth();
+    const {token, user, loading, handleLogin} = useAuth();
     const usernameOrEmailRef = useRef<HTMLInputElement | null>(null);
     const passwordRef = useRef<HTMLInputElement | null>(null);
     const [feedback, setFeedback] = useState<string>("");
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(!loading && user) {
+        if(!loading && user && token) {
             navigate("/" + user.role.name, {replace: true});
         }
     }, [user, loading, navigate]);

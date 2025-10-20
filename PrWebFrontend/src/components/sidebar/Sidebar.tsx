@@ -25,7 +25,7 @@ const Sidebar = ({items}:SidebarProps) => {
     return (
         <div className={styles.root}>
             <div className={styles.avatar}>
-                <img src={API_URL + user?.imageUrl}></img>
+                <img src={user?.imageUrl ?  API_URL + user?.imageUrl : API_URL + "/uploads/default_icon.png"}></img>
             </div>
             <div className={styles.username}>{user?.username}</div>
             <div className={styles.items}>
