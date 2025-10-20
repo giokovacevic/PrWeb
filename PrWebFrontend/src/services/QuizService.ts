@@ -4,10 +4,9 @@ import type IQuizResultResponse from "../types/responses/IQuizResultResponse";
 import { API_URL } from "../utils/Config";
 import { getToken } from "./AuthService";
 
-const token = getToken();
-
 export const getAllQuizzes = async ():Promise<IQuiz[]> => {
     try{
+        const token = getToken();
         const response = await fetch(`${API_URL}/quizzes/all`,{
             method: 'GET',
             headers: {
@@ -27,6 +26,7 @@ export const getAllQuizzes = async ():Promise<IQuiz[]> => {
 }
 
 export const getQuizById = async (id: string):Promise<IQuiz | null> => {
+    const token = getToken();
     try{
         const response = await fetch(`${API_URL}/quizzes/${id}`,{
             method: 'GET',
@@ -47,6 +47,7 @@ export const getQuizById = async (id: string):Promise<IQuiz | null> => {
 }
 
 export const postQuizResults = async (quizResults:IQuizResult):Promise<IQuizResultResponse> => {
+    const token = getToken();
     try {
         const response = await fetch(`${API_URL}/quizzes/quiz-result`, {
             method: 'POST',
@@ -66,6 +67,7 @@ export const postQuizResults = async (quizResults:IQuizResult):Promise<IQuizResu
 }
 
 export const getAllQuizResultsByUserId = async (userId: number):Promise<IQuizResultResponse[]> => {
+    const token = getToken();
     try{
         const response = await fetch(`${API_URL}/quizzes/quiz-result/${userId}`,{
             method: 'GET',

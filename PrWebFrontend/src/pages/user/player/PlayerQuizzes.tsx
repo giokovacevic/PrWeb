@@ -7,16 +7,17 @@ import { getAllQuizzes } from "../../../services/QuizService";
 import { useAuth } from "../../../contexts/AuthContext";
 
 const PlayerQuizes = () => {
-    const {token} = useAuth(); 
+    const {loading} = useAuth(); 
     const [quizes, setQuizes] = useState<IQuiz[]>([]);
 
     useEffect(() => {
-        if(token) loadData();
-    }, [token]);
+        if(!loading) {
+            loadData();
+        }
+    }, [loading]);
 
     const loadData = async () => {
         try {
-            if(!token) return;
             const data = await getAllQuizzes();
             setQuizes(data);
         } catch (error) {
