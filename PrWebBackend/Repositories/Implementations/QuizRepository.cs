@@ -211,7 +211,7 @@ namespace PrWebBackend.Repositories.Implementations
 
         public void CreateQuizResult(QuizResult quizResult)
         {
-            string query = "INSERT INTO QuizResult(`quiz_id`, `user_id`, `quizresult_date`, `quizresult_time_needed`, `quizresult_correct_amount`, `quizresult_points`) VALUES (@param1, @param2, @param3, @param4, @param5, @param6);";
+            string query = $"INSERT INTO QuizResult({Columns[nameof(Quiz.Id)]}, {Columns[UserId]}, {Columns[QuizResultDate]}, {Columns[QuizResultTimeNeeded]}, {Columns[QuizResultCorrectAmount]}, {Columns[QuizResultPoints]}) VALUES (@param1, @param2, @param3, @param4, @param5, @param6);";
 
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
@@ -237,7 +237,7 @@ namespace PrWebBackend.Repositories.Implementations
             string quizResultAlias = "qr";
             string userAlias = "u";
 
-            string query = "SELECT quizresult_id, quiz_id, qr.user_id as user_id, user_username, quizresult_date, quizresult_time_needed, quizresult_correct_amount, quizresult_points from QuizResult qr INNER JOIN User u on qr.user_id = u.user_id  WHERE qr.user_id = @userId;";
+            string query = $"SELECT {Columns[QuizResultId]}, {Columns[nameof(Quiz.Id)]}, {quizResultAlias}.{Columns[UserId]} as {Columns[UserId]}, {Columns[UserUsername]}, {Columns[QuizResultDate]}, {Columns[QuizResultTimeNeeded]}, {Columns[QuizResultCorrectAmount]}, {Columns[QuizResultPoints]} from QuizResult {quizResultAlias} INNER JOIN User {userAlias} on {quizResultAlias}.{Columns[UserId]} = {userAlias}.{Columns[UserId]}  WHERE {quizResultAlias}.{Columns[UserId]} = @userId;";
 
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
